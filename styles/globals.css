@@ -13,7 +13,8 @@
   }
 }
 
-.fa-spin {
+.fa-spin,
+.fa-shake {
   animation-duration: 5s !important;
 }
 
