@@ -3,6 +3,7 @@ import HomeCard from '../components/HomeCard'
 import SolarImage from '../public/solar-panel.jpeg'
 import MiningImage from '../public/mining.jpeg'
 import FMCGImage from '../public/fmcg.jpeg'
+import AgroImage from '../public/agro.jpeg'
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
         <HomeCard title="Solar - Sun Infinity" imageSrc={SolarImage} />
         <HomeCard title="Earth-Mined Goodness - ZAYAA" imageSrc={MiningImage} />
         <HomeCard title="FMCG Retail - Imperial Stores" imageSrc={FMCGImage} />
+        <HomeCard title="Agro Technology - SAIBARRELCO" imageSrc={AgroImage} />
       </main>
     </div>
   )

@@ -12,3 +12,11 @@
     justify-content: center;
   }
 }
+
+.fa-spin {
+  animation-duration: 5s !important;
+}
+
+html {
+  scroll-behavior: smooth !important;
+}
