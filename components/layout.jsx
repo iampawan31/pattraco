@@ -1,6 +1,23 @@
 import Sidebar from './Sidebar'
+import { useEffect } from 'react'
 
-const layout = ({ children }) => {
+const Layout = ({ children }) => {
+  useEffect(() => {
+    function resize() {
+      // We execute the same script as before
+      let vh = window.innerHeight * 0.01
+      document.documentElement.style.setProperty('--vh', `${vh}px`)
+    }
+
+    window.addEventListener('resize', resize)
+    window.addEventListener('load', resize)
+
+    return () => {
+      window.removeEventListener('resize', resize)
+      window.removeEventListener('load', resize)
+    }
+  }, [])
+
   return (
     <>
       <div className="min-w-full flex h-screen min-h-screen">
@@ -13,4 +30,4 @@ const layout = ({ children }) => {
   )
 }
 
-export default layout
+export default Layout
