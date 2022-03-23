@@ -73,14 +73,14 @@ export default function Home() {
 
       <main className="w-full">
         {/* Background */}
-        <div className="w-full absolute left-0 top-0 bottom-0 overflow-hidden">
+        <div className="invisible md:visible w-full absolute left-0 top-0 bottom-0 overflow-hidden">
           <div className="w-full bg-gradient-to-r from-black/30 to-green-600/30 z-20 absolute left-0 top-0 bg-cover min-w-full h-full min-h-screen"></div>
           <div
             className={`${
               backgroundImage === 'bg-agro'
                 ? 'opacity-100 scale-105'
                 : 'opacity-0'
-            } w-full transition-all ease-linear duration-1000 z-10 absolute left-0 top-0 bg-cover min-w-full h-full min-h-screen`}
+            } w-full transition-all ease-linear duration-500 z-10 absolute left-0 top-0 bg-cover min-w-full h-full min-h-screen`}
           >
             <Image src={agroBg} layout="fill" objectFit="cover" alt="Agro" />
           </div>
@@ -89,7 +89,7 @@ export default function Home() {
               backgroundImage === 'bg-mining'
                 ? 'opacity-100 scale-105'
                 : 'opacity-0'
-            } w-full transition-all ease-linear duration-1000 z-10 absolute left-0 top-0 bg-cover min-w-full h-full min-h-screen`}
+            } w-full transition-all ease-linear duration-500 z-10 absolute left-0 top-0 bg-cover min-w-full h-full min-h-screen`}
           >
             <Image src={miningBg} layout="fill" objectFit="cover" alt="Agro" />
           </div>
@@ -98,7 +98,7 @@ export default function Home() {
               backgroundImage === 'bg-solar'
                 ? 'opacity-100 scale-105'
                 : 'opacity-0'
-            } w-full transition-all ease-linear duration-1000 z-10 absolute left-0 top-0 bg-cover min-w-full h-full min-h-screen`}
+            } w-full transition-all ease-linear duration-500 z-10 absolute left-0 top-0 bg-cover min-w-full h-full min-h-screen`}
           >
             <Image src={solarBg} layout="fill" objectFit="cover" alt="Agro" />
           </div>
@@ -107,7 +107,7 @@ export default function Home() {
               backgroundImage === 'bg-fmcg'
                 ? 'opacity-100 scale-105'
                 : 'opacity-0'
-            } w-full transition-all ease-linear duration-1000 z-10 absolute left-0 top-0 bg-cover min-w-full h-full min-h-screen`}
+            } w-full transition-all ease-linear duration-500 z-10 absolute left-0 top-0 bg-cover min-w-full h-full min-h-screen`}
           >
             <Image src={fmcgBg} layout="fill" objectFit="cover" alt="Agro" />
           </div>
@@ -116,24 +116,24 @@ export default function Home() {
               backgroundImage === 'bg-csr'
                 ? 'opacity-100 scale-105'
                 : 'opacity-0'
-            } w-full transition-all ease-linear duration-1000 z-10 absolute left-0 top-0 bg-cover min-w-full h-full min-h-screen`}
+            } w-full transition-all ease-linear duration-500 z-10 absolute left-0 top-0 bg-cover min-w-full h-full min-h-screen`}
           >
             <Image src={csrBg} layout="fill" objectFit="cover" alt="Agro" />
           </div>
           <div
             className={`${
               backgroundImage === 'bg-white' ? 'opacity-100' : 'opacity-0'
-            } w-full transition-all ease-linear duration-1000 z-10 absolute left-0 top-0 bg-cover min-w-full h-full min-h-screen`}
+            } w-full transition-all ease-linear duration-500 z-10 absolute left-0 top-0 bg-cover min-w-full h-full min-h-screen`}
           >
             <Image src={whiteBg} layout="fill" objectFit="cover" alt="Agro" />
           </div>
         </div>
-        <div className="relative container mx-auto z-40">
+        <div className="invisible md:visible relative container mx-auto z-40">
           <div className="h-full pt-24 justify-center flex-col inline-flex">
-            <div className="px-16">
+            <div className="px-4 md:px-16">
               <div
                 ref={solarHoverRef}
-                className="text-5xl cursor-pointer font-extralight py-4"
+                className="text-xl md:text-5xl cursor-pointer font-extralight py-2 md:py-4"
               >
                 <Link href="/">
                   <>
@@ -143,7 +143,7 @@ export default function Home() {
               </div>
               <div
                 ref={miningHoverRef}
-                className="text-5xl cursor-pointer font-extralight py-4"
+                className="text-xl md:text-5xl cursor-pointer font-extralight py-2 md:py-4"
               >
                 <Link href="/">
                   <>
@@ -154,7 +154,7 @@ export default function Home() {
               </div>
               <div
                 ref={fmcgHoverRef}
-                className="text-5xl cursor-pointer font-extralight py-4"
+                className="text-xl md:text-5xl cursor-pointer font-extralight py-2 md:py-4"
               >
                 <Link href="/">
                   <>
@@ -165,7 +165,7 @@ export default function Home() {
               </div>
               <div
                 ref={agroHoverRef}
-                className="text-5xl cursor-pointer font-extralight py-4"
+                className="text-xl md:text-5xl cursor-pointer font-extralight py-2 md:py-4"
               >
                 <Link href="/">
                   <>
@@ -176,7 +176,7 @@ export default function Home() {
               </div>
               <div
                 ref={csrHoverRef}
-                className="text-5xl cursor-pointer font-extralight py-4"
+                className="text-xl md:text-5xl cursor-pointer font-extralight py-2 md:py-4"
               >
                 <Link href="/">
                   <>
@@ -184,7 +184,7 @@ export default function Home() {
                   </>
                 </Link>
               </div>
-              <div className="text-5xl cursor-pointer font-extralight py-4">
+              <div className="text-xl md:text-5xl cursor-pointer font-extralight py-2 md:py-4">
                 <Link href="/">Contact</Link>
               </div>
             </div>

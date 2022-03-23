@@ -5,10 +5,10 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <nav className="relative z-30">
-      <div className="container mx-auto py-4">
+    <nav className="relative z-50">
+      <div className="container mx-auto py-4 px-4 md:px-0">
         <div className="flex justify-between content-center">
-          <div>Pattraco</div>
+          <div className="">Pattraco</div>
           <button onClick={() => setIsOpen((prevValue) => !prevValue)}>
             <span className="block relative w-6 h-1 rounded-sm bg-black"></span>
             <span className="block relative w-6 h-1 rounded-sm bg-black mt-1"></span>
