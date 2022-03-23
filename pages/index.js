@@ -3,12 +3,12 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import useHover from '../hooks/useHover'
-import agroBg from '../public/agro.jpeg'
-import miningBg from '../public/mining.jpeg'
-import whiteBg from '../public/white.png'
-import fmcgBg from '../public/fmcg.jpeg'
-import solarBg from '../public/solar-panel.jpeg'
-import csrBg from '../public/csr.jpg'
+import agroBg from '../public/agro.webp'
+import miningBg from '../public/mining.webp'
+import whiteBg from '../public/white.webp'
+import fmcgBg from '../public/fmcg.webp'
+import solarBg from '../public/solar-panel.webp'
+import csrBg from '../public/csr.webp'
 
 export default function Home() {
   const [agroHoverRef, isAgroHover] = useHover()
@@ -74,7 +74,7 @@ export default function Home() {
       <main className="w-full">
         {/* Background */}
         <div className="invisible md:visible w-full absolute left-0 top-0 bottom-0 overflow-hidden">
-          <div className="w-full bg-gradient-to-r from-black/30 to-green-600/30 z-20 absolute left-0 top-0 bg-cover min-w-full h-full min-h-screen"></div>
+          <div className="w-full bg-gradient-to-r from-white/90 to-green-600/30 z-20 absolute left-0 top-0 bg-cover min-w-full h-full min-h-screen"></div>
           <div
             className={`${
               backgroundImage === 'bg-agro'
