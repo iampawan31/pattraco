@@ -15,6 +15,10 @@ module.exports = {
         agroBg: "url('/agro.jpeg')",
         fmcgBg: "url('/fmcg.jpeg')",
         miningBg: "url('/mining.jpeg')",
+        whiteBg: "url('/white.png')",
+      },
+      transitionProperty: {
+        background: 'background',
       },
     },
   },

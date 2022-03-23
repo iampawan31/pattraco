@@ -1,8 +1,11 @@
-import '../styles/globals.css'
+import { useEffect, useState, useRef } from 'react'
 import Layout from '../components/layout'
-import { useEffect } from 'react'
+import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
+  const [backgroundImage, setBackgroundImage] = useState('')
+  const bgImageRef = useRef()
+
   useEffect(() => {
     function resize() {
       // We execute the same script as before
@@ -18,9 +21,10 @@ function MyApp({ Component, pageProps }) {
       window.removeEventListener('load', resize)
     }
   }, [])
+
   return (
-    <Layout>
-      <Component {...pageProps} />
+    <Layout bgImageRef={bgImageRef} bgImage={backgroundImage}>
+      <Component setBackgroundImage={setBackgroundImage} {...pageProps} />
     </Layout>
   )
 }

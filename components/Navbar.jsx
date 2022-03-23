@@ -5,7 +5,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <nav className="shadow">
+    <nav className="relative z-30">
       <div className="container mx-auto py-4">
         <div className="flex justify-between content-center">
           <div>Pattraco</div>
@@ -23,7 +23,7 @@ const Navbar = () => {
       >
         <button
           onClick={() => setIsOpen((prevValue) => !prevValue)}
-          className="absolute top-0 right-5 text-4xl font-bold"
+          className="absolute top-10 right-24 text-4xl font-bold hover:scale-125 transition"
         >
           X
         </button>
