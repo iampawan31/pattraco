@@ -5,7 +5,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <nav className="relative z-50">
+    <nav className="relative z-50 border-b shadow md:border-none md:shadow-none">
       <div className="container mx-auto py-4 px-4 md:px-0">
         <div className="flex justify-between content-center">
           <div className="">Pattraco</div>

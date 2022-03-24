@@ -9,6 +9,7 @@ import whiteBg from '../public/white.webp'
 import fmcgBg from '../public/fmcg.webp'
 import solarBg from '../public/solar-panel.webp'
 import csrBg from '../public/csr.webp'
+import HomeCard from '../components/HomeCard'
 
 export default function Home() {
   const [agroHoverRef, isAgroHover] = useHover()
@@ -73,7 +74,7 @@ export default function Home() {
 
       <main className="w-full">
         {/* Background */}
-        <div className="invisible md:visible w-full absolute left-0 top-0 bottom-0 overflow-hidden">
+        <div className="hidden md:block w-full absolute left-0 top-0 bottom-0 overflow-hidden">
           <div className="w-full bg-gradient-to-r from-white/90 to-green-600/30 z-20 absolute left-0 top-0 bg-cover min-w-full h-full min-h-screen"></div>
           <div
             className={`${
@@ -128,7 +129,8 @@ export default function Home() {
             <Image src={whiteBg} layout="fill" objectFit="cover" alt="Agro" />
           </div>
         </div>
-        <div className="invisible md:visible relative container mx-auto z-40">
+        {/* Web Layout */}
+        <div className="hidden md:block relative container mx-auto z-40">
           <div className="h-full pt-24 justify-center flex-col inline-flex">
             <div className="px-4 md:px-16">
               <div
@@ -187,6 +189,55 @@ export default function Home() {
               <div className="text-xl md:text-5xl cursor-pointer font-extralight py-2 md:py-4">
                 <Link href="/">Contact</Link>
               </div>
+            </div>
+          </div>
+        </div>
+        {/* Mobile Layout */}
+        <div className="w-full h-full min-h-screen py-10">
+          <div className="container mx-auto px-4">
+            <div className="font-sans py-4 mb-4 text-center uppercase font-light text-2xl border-black border">
+              Explore
+            </div>
+            <div className="flex flex-col space-y-4">
+              <Link
+                href="/sun-infinity"
+                passHref
+                className="cursor-pointer my-4"
+              >
+                <HomeCard
+                  imageSrc={fmcgBg}
+                  mainTitle="Sun Infinity"
+                  subTitle="Solar"
+                />
+              </Link>
+              <Link href="/zayaa" passHref className="cursor-pointer my-4">
+                <HomeCard
+                  imageSrc={miningBg}
+                  mainTitle="ZAYAA"
+                  subTitle="Earth-Mined Goodness"
+                />
+              </Link>
+              <Link href="/contact" passHref className="cursor-pointer my-4">
+                <HomeCard
+                  imageSrc={fmcgBg}
+                  mainTitle="Imperial Stones"
+                  subTitle="FMCG Retail"
+                />
+              </Link>
+              <Link href="/contact" passHref className="cursor-pointer my-4">
+                <HomeCard
+                  imageSrc={agroBg}
+                  mainTitle="SAIBARRELCO"
+                  subTitle="Agro Technology"
+                />
+              </Link>
+              <Link href="/contact" passHref className="cursor-pointer my-4">
+                <HomeCard
+                  imageSrc={csrBg}
+                  mainTitle="Your Soul Tribe"
+                  subTitle="CSR"
+                />
+              </Link>
             </div>
           </div>
         </div>
