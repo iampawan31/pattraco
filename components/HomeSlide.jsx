@@ -16,7 +16,7 @@ const HomeSlide = ({
         <Image
           src={imageSrc}
           layout="fill"
-          className="hover:scale-110 transition duration-300"
+          className="hover:scale-105 ease-linear transition duration-300"
           objectFit="cover"
           alt={mainTitle}
         />

@@ -1,77 +1,18 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import { Mousewheel, Pagination } from 'swiper'
+import 'swiper/css'
+import 'swiper/css/pagination'
+import { Swiper, SwiperSlide } from 'swiper/react'
 import HomeCard from '../components/HomeCard'
-import useHover from '../hooks/useHover'
+import HomeSlide from '../components/HomeSlide'
 import agroBg from '../public/agro.webp'
 import csrBg from '../public/csr.webp'
 import fmcgBg from '../public/fmcg.webp'
 import miningBg from '../public/mining.webp'
 import solarBg from '../public/solar-panel.webp'
-import mainBg from '../public/main.webp'
-import { Swiper, SwiperSlide } from 'swiper/react'
-
-// Import Swiper styles
-import 'swiper/css'
-import 'swiper/css/pagination'
-// import required modules
-import { Mousewheel, Pagination } from 'swiper'
-import HomeSlide from '../components/HomeSlide'
 
 export default function Home() {
-  const [agroHoverRef, isAgroHover] = useHover()
-  const [miningHoverRef, isMiningHover] = useHover()
-  const [fmcgHoverRef, isFmcgHover] = useHover()
-  const [solarHoverRef, isSolarHover] = useHover()
-  const [csrHoverRef, isCsrHover] = useHover()
-  const [backgroundImage, setBackgroundImage] = useState('bg-white')
-
-  useEffect(() => {
-    if (isAgroHover) {
-      setBackgroundImage('bg-agro')
-    } else {
-      setBackgroundImage('bg-white')
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isAgroHover])
-
-  useEffect(() => {
-    if (isMiningHover) {
-      setBackgroundImage('bg-mining')
-    } else {
-      setBackgroundImage('bg-white')
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isMiningHover])
-
-  useEffect(() => {
-    if (isSolarHover) {
-      setBackgroundImage('bg-solar')
-    } else {
-      setBackgroundImage('bg-white')
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isSolarHover])
-
-  useEffect(() => {
-    if (isFmcgHover) {
-      setBackgroundImage('bg-fmcg')
-    } else {
-      setBackgroundImage('bg-white')
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isFmcgHover])
-
-  useEffect(() => {
-    if (isCsrHover) {
-      setBackgroundImage('bg-csr')
-    } else {
-      setBackgroundImage('bg-white')
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isCsrHover])
-
   return (
     <div className="font-sans text-black">
       <Head>
@@ -261,7 +202,7 @@ export default function Home() {
           </div>
         </div> */}
         {/* Mobile Layout */}
-        {/* <div className="md:hidden w-full h-full min-h-screen py-10">
+        <div className="md:hidden w-full h-full min-h-screen py-10">
           <div className="container mx-auto px-4">
             <div className="font-sans py-4 mb-4 text-center uppercase font-light text-2xl border-black border">
               Explore
@@ -308,7 +249,7 @@ export default function Home() {
               </Link>
             </div>
           </div>
-        </div> */}
+        </div>
       </main>
     </div>
   )
