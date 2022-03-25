@@ -202,7 +202,7 @@ export default function Home() {
           </div>
         </div> */}
         {/* Mobile Layout */}
-        <div className="md:hidden w-full h-full min-h-screen py-10">
+        {/* <div className="md:hidden w-full h-full min-h-screen py-10">
           <div className="container mx-auto px-4">
             <div className="font-sans py-4 mb-4 text-center uppercase font-light text-2xl border-black border">
               Explore
@@ -249,7 +249,7 @@ export default function Home() {
               </Link>
             </div>
           </div>
-        </div>
+        </div> */}
       </main>
     </div>
   )
