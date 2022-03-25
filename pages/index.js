@@ -2,14 +2,14 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
+import HomeCard from '../components/HomeCard'
 import useHover from '../hooks/useHover'
 import agroBg from '../public/agro.webp'
-import miningBg from '../public/mining.webp'
-import whiteBg from '../public/white.webp'
-import fmcgBg from '../public/fmcg.webp'
-import solarBg from '../public/solar-panel.webp'
 import csrBg from '../public/csr.webp'
-import HomeCard from '../components/HomeCard'
+import fmcgBg from '../public/fmcg.webp'
+import miningBg from '../public/mining.webp'
+import solarBg from '../public/solar-panel.webp'
+import mainBg from '../public/main.webp'
 
 export default function Home() {
   const [agroHoverRef, isAgroHover] = useHover()
@@ -126,7 +126,7 @@ export default function Home() {
               backgroundImage === 'bg-white' ? 'opacity-100' : 'opacity-0'
             } w-full transition-all ease-linear duration-500 z-10 absolute left-0 top-0 bg-cover min-w-full h-full min-h-screen`}
           >
-            <Image src={whiteBg} layout="fill" objectFit="cover" alt="Agro" />
+            <Image src={mainBg} layout="fill" objectFit="cover" alt="Agro" />
           </div>
         </div>
         {/* Web Layout */}
@@ -193,7 +193,7 @@ export default function Home() {
           </div>
         </div>
         {/* Mobile Layout */}
-        <div className="w-full h-full min-h-screen py-10">
+        <div className="md:hidden w-full h-full min-h-screen py-10">
           <div className="container mx-auto px-4">
             <div className="font-sans py-4 mb-4 text-center uppercase font-light text-2xl border-black border">
               Explore
