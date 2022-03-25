@@ -10,6 +10,14 @@ import fmcgBg from '../public/fmcg.webp'
 import miningBg from '../public/mining.webp'
 import solarBg from '../public/solar-panel.webp'
 import mainBg from '../public/main.webp'
+import { Swiper, SwiperSlide } from 'swiper/react'
+
+// Import Swiper styles
+import 'swiper/css'
+import 'swiper/css/pagination'
+// import required modules
+import { Mousewheel, Pagination } from 'swiper'
+import HomeSlide from '../components/HomeSlide'
 
 export default function Home() {
   const [agroHoverRef, isAgroHover] = useHover()
@@ -72,9 +80,59 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="w-full">
+      <main className="w-full main-height py-6">
+        <Swiper
+          direction={'vertical'}
+          slidesPerView={1}
+          spaceBetween={30}
+          mousewheel={true}
+          modules={[Mousewheel, Pagination]}
+          className="mySwiper"
+        >
+          <SwiperSlide>
+            <HomeSlide
+              imageSrc={solarBg}
+              mainTitle="Solar"
+              subTitle="Sun Infinity"
+              currentSlide={1}
+              totalSlides={4}
+              href="/"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <HomeSlide
+              imageSrc={miningBg}
+              mainTitle="Earth-Mined Goodness"
+              subTitle="ZAYAA"
+              currentSlide={2}
+              totalSlides={4}
+              href="/"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <HomeSlide
+              imageSrc={fmcgBg}
+              mainTitle="FMCG Retail"
+              subTitle="Imperial Stores"
+              currentSlide={3}
+              totalSlides={4}
+              href="/"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <HomeSlide
+              imageSrc={agroBg}
+              mainTitle="Agro Technology"
+              subTitle="SAIBARRELCO"
+              currentSlide={4}
+              totalSlides={4}
+              href="/"
+            />
+          </SwiperSlide>
+        </Swiper>
+
         {/* Background */}
-        <div className="hidden md:block w-full absolute left-0 top-0 bottom-0 overflow-hidden">
+        {/* <div className="hidden md:block w-full absolute left-0 top-0 bottom-0 overflow-hidden">
           <div className="w-full bg-gradient-to-r from-white/90 to-green-600/30 z-20 absolute left-0 top-0 bg-cover min-w-full h-full min-h-screen"></div>
           <div
             className={`${
@@ -128,9 +186,9 @@ export default function Home() {
           >
             <Image src={mainBg} layout="fill" objectFit="cover" alt="Agro" />
           </div>
-        </div>
+        </div> */}
         {/* Web Layout */}
-        <div className="hidden md:block relative container mx-auto z-40">
+        {/* <div className="hidden md:block relative container mx-auto z-40">
           <div className="h-full pt-24 justify-center flex-col inline-flex">
             <div className="px-4 md:px-16">
               <div
@@ -191,9 +249,9 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
         {/* Mobile Layout */}
-        <div className="md:hidden w-full h-full min-h-screen py-10">
+        {/* <div className="md:hidden w-full h-full min-h-screen py-10">
           <div className="container mx-auto px-4">
             <div className="font-sans py-4 mb-4 text-center uppercase font-light text-2xl border-black border">
               Explore
@@ -240,7 +298,7 @@ export default function Home() {
               </Link>
             </div>
           </div>
-        </div>
+        </div> */}
       </main>
     </div>
   )

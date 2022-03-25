@@ -5,15 +5,39 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <nav className="relative z-50 border-b shadow md:border-none md:shadow-none">
+    <nav className="relative h-12 z-50 border-b shadow md:border-none md:shadow-none">
       <div className="container mx-auto py-4 px-4 md:px-0">
         <div className="flex justify-between content-center">
           <div className="">Pattraco</div>
-          <button onClick={() => setIsOpen((prevValue) => !prevValue)}>
-            <span className="block relative w-6 h-1 rounded-sm bg-black"></span>
-            <span className="block relative w-6 h-1 rounded-sm bg-black mt-1"></span>
-            <span className="block relative w-6 h-1 rounded-sm bg-black mt-1"></span>
-          </button>
+          <div className="hidden md:block">
+            <div className="flex space-x-4">
+              <div className="font-extralight hover:border-b hover:border-black uppercase transition-all">
+                <Link href="/">Sun Infinity</Link>
+              </div>
+              <div className="font-extralight hover:border-b hover:border-black uppercase transition-all">
+                <Link href="/">ZAYAA</Link>
+              </div>
+              <div className="font-extralight hover:border-b hover:border-black uppercase transition-all">
+                <Link href="/">Imperial Stores</Link>
+              </div>
+              <div className="font-extralight hover:border-b hover:border-black uppercase transition-all">
+                <Link href="/">SAIBARRELCO</Link>
+              </div>
+              <div className="font-extralight hover:border-b hover:border-black uppercase transition-all">
+                <Link href="/">Your Soul Tribe</Link>
+              </div>
+              <div className="font-extralight hover:border-b hover:border-black uppercase transition-all">
+                <Link href="/">Contact</Link>
+              </div>
+            </div>
+          </div>
+          <div className="md:hidden">
+            <button onClick={() => setIsOpen((prevValue) => !prevValue)}>
+              <span className="block relative w-6 h-1 rounded-sm bg-black"></span>
+              <span className="block relative w-6 h-1 rounded-sm bg-black mt-1"></span>
+              <span className="block relative w-6 h-1 rounded-sm bg-black mt-1"></span>
+            </button>
+          </div>
         </div>
       </div>
       <div
