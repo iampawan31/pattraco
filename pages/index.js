@@ -21,7 +21,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="w-full main-height py-6">
+      <main className="w-full main-height">
         <Swiper
           direction={'vertical'}
           slidesPerView={1}
