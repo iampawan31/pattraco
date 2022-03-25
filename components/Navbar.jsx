@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
+import Logo from '../public/logo.png'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -7,8 +9,10 @@ const Navbar = () => {
   return (
     <nav className="relative h-12 z-50 border-b shadow md:border-none md:shadow-none">
       <div className="container mx-auto py-4 px-4 md:px-0">
-        <div className="flex justify-between content-center">
-          <div className="">Pattraco</div>
+        <div className="flex justify-between content-center items-center">
+          <div className="relative h-12 w-28">
+            <Image src={Logo} layout="fill" objectFit="cover" alt="Pattraco" />
+          </div>
           <div className="hidden md:block">
             <div className="flex space-x-4">
               <div className="font-extralight hover:border-b hover:border-black uppercase transition-all">

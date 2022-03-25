@@ -11,18 +11,8 @@ const HomeSlide = ({
   href,
 }) => {
   return (
-    <div className="flex flex-row w-full h-full justify-center items-center">
-      <div className="w-4/12">
-        <div className="w-full text-xl md:text-5xl cursor-pointer font-extralight py-2 md:py-4">
-          <Link href={href}>
-            <>
-              {mainTitle} - <span className="font-normal">{subTitle}</span>
-            </>
-          </Link>
-        </div>
-      </div>
-
-      <div className="w-6/12 h-full relative saturate-50 hover:saturate-100">
+    <div className="flex flex-row w-full h-full justify-center items-center space-x-4">
+      <div className="w-full h-full relative">
         <Image
           src={imageSrc}
           layout="fill"
@@ -30,12 +20,29 @@ const HomeSlide = ({
           objectFit="cover"
           alt={mainTitle}
         />
+        <div className="flex flex-col">
+          <div className="w-auto font-sans text-white text-5xl flex-col absolute right-8 font-extralight">
+            <div className="-ml-8 -mb-6">{currentSlide}</div>
+            <div>/</div>
+            <div className="-mr-8 -mt-6 font-medium">{totalSlides}</div>
+          </div>
+        </div>
+        <div className="w-full text-left text-4xl cursor-pointer px-4 font-extralight bg-gradient-to-t from-black/70 to-black/5 text-white py-4 bottom-0 left-0 absolute z-50">
+          <Link href={href} passHref>
+            <div className="flex space-x-2">
+              <div>{mainTitle}</div>
+              <div>-</div>
+              <div className="font-normal">{subTitle}</div>
+            </div>
+          </Link>
+        </div>
       </div>
-      <div className="w-2/12 font-sans text-7xl flex-col font-extralight flex">
+
+      {/* <div className="w-1/12 font-sans text-7xl flex-col font-extralight flex">
         <div className="-ml-12 -mb-10">{currentSlide}</div>
         <div>/</div>
-        <div className="-mr-12 -mt-10">{totalSlides}</div>
-      </div>
+        <div className="-mr-12 -mt-10 font-medium">{totalSlides}</div>
+      </div> */}
     </div>
   )
 }

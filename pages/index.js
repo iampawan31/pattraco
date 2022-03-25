@@ -95,7 +95,7 @@ export default function Home() {
               mainTitle="Solar"
               subTitle="Sun Infinity"
               currentSlide={1}
-              totalSlides={4}
+              totalSlides={5}
               href="/"
             />
           </SwiperSlide>
@@ -105,7 +105,7 @@ export default function Home() {
               mainTitle="Earth-Mined Goodness"
               subTitle="ZAYAA"
               currentSlide={2}
-              totalSlides={4}
+              totalSlides={5}
               href="/"
             />
           </SwiperSlide>
@@ -115,7 +115,7 @@ export default function Home() {
               mainTitle="FMCG Retail"
               subTitle="Imperial Stores"
               currentSlide={3}
-              totalSlides={4}
+              totalSlides={5}
               href="/"
             />
           </SwiperSlide>
@@ -125,7 +125,17 @@ export default function Home() {
               mainTitle="Agro Technology"
               subTitle="SAIBARRELCO"
               currentSlide={4}
-              totalSlides={4}
+              totalSlides={5}
+              href="/"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <HomeSlide
+              imageSrc={csrBg}
+              mainTitle="CSR"
+              subTitle="Your Soul Tribe"
+              currentSlide={5}
+              totalSlides={5}
               href="/"
             />
           </SwiperSlide>
