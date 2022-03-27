@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-.main-height {
-  height: calc(100vh - 56px);
+@layer utilities {
+  .main-height {
+    height: calc(100vh - 56px);
+  }
 }

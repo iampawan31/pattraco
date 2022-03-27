@@ -45,7 +45,16 @@ export default function Home() {
       mainTitle: 'Your Soul Tribe',
       subTitle: 'CSR',
     },
+    {
+      id: 6,
+      href: '/contact',
+      imageSrc: csrBg,
+      mainTitle: 'Contact Us',
+      subTitle: 'Connect with us',
+    },
   ]
+
+  const currentYear = new Date().getFullYear()
 
   return (
     <div className="font-sans container mx-auto text-black px-2 md:px-0">
@@ -55,7 +64,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="w-full main-height py-6">
+      <main className="w-full md:main-height overflow-y-scroll md:overflow-hidden pt-3 pb-6">
         <div className="gap-4 h-full grid grid-cols-1 md:grid-cols-3 pb-2">
           {data.map(({ id, href, mainTitle, imageSrc, subTitle }) => (
             <Link key={id} href={href} passHref className="cursor-pointer">
@@ -67,7 +76,9 @@ export default function Home() {
             </Link>
           ))}
         </div>
-        <div className="flex justify-center self-center">Pattraco. 2022</div>
+        <div className="flex uppercase font-normal justify-center self-center pt-4 md:py-0">
+          {`Pattraco. ${currentYear}`}
+        </div>
       </main>
     </div>
   )
