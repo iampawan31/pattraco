@@ -12,7 +12,7 @@ const layout = ({ children }) => {
       </Head>
       <div className="w-full scroll-smooth h-full min-h-screen">
         <Navbar />
-        <div className="first-line:w-full">{children}</div>
+        <div className="w-full">{children}</div>
         <Footer />
       </div>
     </div>

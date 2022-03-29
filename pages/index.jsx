@@ -49,7 +49,7 @@ export default function Home() {
 
   return (
     <div className="font-sans text-black px-2 md:px-0">
-      <main className="w-full md:main-height pt-3">
+      <main className="w-full md:main-height">
         <div className="h-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5">
           {data.map(({ id, href, mainTitle, imageSrc, subTitle }) => (
             <Link key={id} href={href} passHref className="cursor-pointer">

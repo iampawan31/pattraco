@@ -12,6 +12,7 @@ const HomeCard = forwardRef(({ href, imageSrc, mainTitle, subTitle }, ref) => {
           objectFit="cover"
           className="group-hover:scale-110 ease-in-out transform transition duration-500"
           alt={mainTitle}
+          placeholder="blur"
         />
         <div
           className="bg-gradient-to-t from-black/90 to-black/10

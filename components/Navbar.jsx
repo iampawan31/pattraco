@@ -1,5 +1,7 @@
 import Image from 'next/image'
 import Logo from '../public/logo.png'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons'
 
 const Navbar = () => {
   return (
@@ -17,7 +19,22 @@ const Navbar = () => {
               />
             </div>
           </div>
-          <div className="w-1/4"></div>
+          <div className="w-1/4 flex justify-center items-center">
+            <div className="flex flex-col">
+              <div>
+                <a href="mailto:info@pattrco.com">
+                  <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
+                  info@pattrco.com
+                </a>
+              </div>
+              <div>
+                <a href="tel:+918123565698">
+                  <FontAwesomeIcon icon={faPhone} className="mr-2" />
+                  8123565698
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </nav>
