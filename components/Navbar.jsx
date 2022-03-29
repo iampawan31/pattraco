@@ -11,16 +11,16 @@ const Navbar = () => {
         <div className="flex h-full justify-between content-center items-center">
           <div className="hidden md:block w-1/4"></div>
           <div className="w-1/2 md:w-1/4 flex justify-start md:justify-center">
-            <div className="relative h-10 w-24 md:h-12 md:w-28">
-              <Link href="/" passHref>
+            <Link href="/" passHref>
+              <div className="relative h-10 w-24 md:h-12 md:w-28">
                 <Image
                   src={Logo}
                   layout="fill"
                   objectFit="cover"
                   alt="Pattraco"
                 />
-              </Link>
-            </div>
+              </div>
+            </Link>
           </div>
           <div className="w-1/2 md:w-1/4 flex justify-end items-center">
             <div className="flex flex-col">
