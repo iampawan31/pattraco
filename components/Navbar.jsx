@@ -19,12 +19,12 @@ const Navbar = () => {
               />
             </div>
           </div>
-          <div className="w-1/4 flex justify-center items-center">
+          <div className="w-1/4 flex justify-end items-center">
             <div className="flex flex-col">
               <div>
                 <a href="mailto:info@pattrco.com">
                   <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
-                  info@pattrco.com
+                  <span>info@pattrco.com</span>
                 </a>
               </div>
               <div>
