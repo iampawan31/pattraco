@@ -10,7 +10,7 @@ const HomeCard = forwardRef(({ href, imageSrc, mainTitle, subTitle }, ref) => {
           src={imageSrc}
           layout="fill"
           objectFit="cover"
-          className="group-hover:scale-105 transform transition duration-300"
+          className="group-hover:scale-110 ease-in-out transform transition duration-500"
           alt={mainTitle}
         />
         <div
@@ -21,7 +21,7 @@ const HomeCard = forwardRef(({ href, imageSrc, mainTitle, subTitle }, ref) => {
         flex-col justify-end text-gray-300 z-30 font-extralight px-2"
         >
           <div className="text-3xl font-normal">{mainTitle}</div>
-          <div className="">{subTitle}</div>
+          <div className="font-normal">{subTitle}</div>
         </div>
       </div>
     </a>

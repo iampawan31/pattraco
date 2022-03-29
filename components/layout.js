@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Navbar from './Navbar'
+import Footer from './Footer'
 
 const layout = ({ children }) => {
   return (
@@ -12,6 +13,7 @@ const layout = ({ children }) => {
       <div className="w-full scroll-smooth h-full min-h-screen">
         <Navbar />
         <div className="first-line:w-full">{children}</div>
+        <Footer />
       </div>
     </div>
   )

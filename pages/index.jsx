@@ -21,21 +21,21 @@ export default function Home() {
       id: 2,
       href: '/zayaa',
       imageSrc: miningBg,
-      mainTitle: 'ZAYAA',
-      subTitle: 'Earth-Mined Goodness',
+      mainTitle: 'Zayaa',
+      subTitle: 'Earth-Mined',
     },
     {
       id: 3,
-      href: '/imperial-stones',
+      href: '/imperial-stores',
       imageSrc: fmcgBg,
-      mainTitle: 'Imperial Stones',
+      mainTitle: 'Imperial Stores',
       subTitle: 'FMCG Retail',
     },
     {
       id: 4,
       href: '/saibarrelco',
       imageSrc: agroBg,
-      mainTitle: 'SAIBARRELCO',
+      mainTitle: 'Saibarrelco',
       subTitle: 'Agro Technology',
     },
     {
@@ -50,7 +50,7 @@ export default function Home() {
   return (
     <div className="font-sans text-black px-2 md:px-0">
       <main className="w-full md:main-height pt-3">
-        <div className="gap-1 h-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5">
+        <div className="h-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5">
           {data.map(({ id, href, mainTitle, imageSrc, subTitle }) => (
             <Link key={id} href={href} passHref className="cursor-pointer">
               <HomeCard
