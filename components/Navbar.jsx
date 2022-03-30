@@ -12,7 +12,7 @@ const Navbar = () => {
           <div className="hidden md:block w-1/4"></div>
           <div className="w-1/2 md:w-1/4 flex justify-start md:justify-center">
             <Link href="/" passHref>
-              <div className="relative h-10 w-24 md:h-12 md:w-28">
+              <div className="relative h-10 w-24 md:h-12 md:w-28 cursor-pointer">
                 <Image
                   src={Logo}
                   layout="fill"

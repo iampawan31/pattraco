@@ -1,9 +1,23 @@
-import React from 'react'
+import { useState, useEffect } from 'react'
 import Head from 'next/head'
 import solarBg from '../public/solar-panel.webp'
 import Image from 'next/image'
+import ContentSection from '../components/ContentSection'
 
 const SunInfinity = () => {
+  const [sections, setSections] = useState(null)
+  const [isLoading, setLoading] = useState(false)
+
+  useEffect(() => {
+    setLoading(true)
+    fetch('api/sun-infinity')
+      .then((res) => res.json())
+      .then((data) => {
+        setSections(data.sections)
+        setLoading(false)
+      })
+  }, [])
+
   return (
     <div>
       <Head>
@@ -24,119 +38,49 @@ const SunInfinity = () => {
               placeholder="blur"
             />
             <div
-              className="bg-gradient-to-l from-black/50 to-black/5
-         w-full h-full py-6 text-right
-        content-end cursor-pointer absolute top-0 right-0 px-10 flex
-        flex-col justify-center text-gray-100 z-30 font-extralight"
-            ></div>
-            <div className="absolute z-50 w-full left-0 flex md:flex-col items-center bottom-0 md:top-48 right-0 bg-white bg-opacity-60 text-gray-800 md:rounded-l-xl px-4 md:text-right">
-              <div className="hidden md:flex text-3xl md:text-8xl md:mb-2 font-light">
+              className="bg-gradient-to-l 
+              from-black/50 
+              to-black/5
+                w-full 
+                h-full 
+                py-6 
+                text-right
+                content-end 
+                cursor-pointer 
+                absolute 
+                top-0 
+                right-0 
+                px-10 
+                flex
+                flex-col 
+                justify-center 
+                text-gray-100 
+                z-30 
+                font-extralight"
+            />
+            <div className="absolute z-40 w-full md:w-fit left-0 md:left-auto flex md:flex-col items-center md:items-end bottom-0 md:bottom-0 md:right-0 bg-white bg-opacity-60 text-gray-800 md:rounded-tl-xl px-4 md:text-right">
+              <div className="hidden md:flex text-3xl md:text-7xl md:mb-2 font-bold">
                 Sun Infinity
               </div>
               <div className="hidden md:flex text-3xl md:text-5xl font-light">
                 Solar
               </div>
-              <div className="text-3xl font-sans font-light">
+              <div className="text-3xl font-sans md:hidden font-light">
                 Sun Infinity - Solar
               </div>
             </div>
           </div>
         </div>
         {/* Content Section */}
-        <div className="border-b border-gray-800">
-          <div className="container mx-auto py-6 md:py-16 px-2 md:px-0 w-full">
-            <div className="flex flex-col w-full text-gray-800">
-              <div className="text-5xl font-light md:w-2/6 pb-4 md:pb-0">
-                What We Do
-              </div>
-              <div className="text-2xl md:w-4/6 font-light">
-                We manifest the infinite power of the sun in the form of
-                renewable energy. Pattraco&apos;s solar endeavour - SUN
-                INFINITY, is one of the largest solar power manufacturers in
-                India. With our projects in north-western Rajasthan, India we
-                supply renewable energy to central and state government
-                utilities and independent industrial and commercial customers at
-                predictable fixed prices. Since our renewable power generation
-                does not rely on fossil fuels, our electricity prices are
-                insulated from the volatility of input commodity pricing. We
-                also provide delivery commitments for the electricity production
-                of our power plants to our customers.
-              </div>
-            </div>
-          </div>
-        </div>
-        {/* Content Section */}
-        <div className="border-b border-gray-800">
-          <div className="container mx-auto py-16 w-full">
-            <div className="flex w-full text-gray-800">
-              <div className="text-5xl font-light w-2/6">
-                Low Cost of Energy
-              </div>
-              <div className="text-2xl w-4/6 font-light">
-                We have lowered our cost of renewable power generation through
-                value engineering, operational performance monitoring and strong
-                financial strengths. This allows us to deliver cost-effective
-                energy for our customers. Our in-house EPC expertise lowers
-                system costs and our advanced in-house operations and
-                maintenance capability allows us to increase power yields and
-                monitor project performance near real-time. Coupled with our
-                strong financial strategy, we believe that we are able to offer
-                low-cost renewable power solutions at high efficiency yields.
-              </div>
-            </div>
-          </div>
-        </div>
-        {/* Content Section */}
-        <div className="border-b border-gray-800">
-          <div className="container mx-auto py-16 w-full">
-            <div className="flex w-full text-gray-800">
-              <div className="text-5xl font-light w-2/6">
-                Strong Value Proposition for Our Customers
-              </div>
-              <div className="text-2xl w-4/6 font-light">
-                We manage the entire development and operation process,
-                providing customers with long term certainty under fixed price
-                PPAs. Our in-house focus on high engineering standards and asset
-                quality and maintenance ensures high levels of availability and
-                service to our customers.
-              </div>
-            </div>
-          </div>
-        </div>
-        {/* Content Section */}
-        <div className="border-b border-gray-800">
-          <div className="container mx-auto py-16 w-full">
-            <div className="flex w-full text-gray-800">
-              <div className="text-5xl font-light w-2/6">
-                Integrated Profile
-              </div>
-              <div className="text-2xl w-4/6 font-light">
-                Our integrated profile affords us greater control over project
-                development, construction and operation, which provides us with
-                greater insight and certainty on our construction costs and
-                timeline and operations and maintenance.
-              </div>
-            </div>
-          </div>
-        </div>
-        {/* Content Section */}
-        <div className="border-b border-gray-800">
-          <div className="container mx-auto py-16 w-full">
-            <div className="flex w-full text-gray-800">
-              <div className="text-5xl font-light w-2/6">
-                Strong Community Partnership
-              </div>
-              <div className="text-2xl w-4/6 font-light">
-                We hire from local communities and generally lease land with few
-                alternative uses, providing local communities with a stream of
-                discretionary cash flow without displacing alternative
-                businesses. As a result we are able to build long-term community
-                relationships, which allows us to improve our completion time,
-                further reducing project development risk.
-              </div>
-            </div>
-          </div>
-        </div>
+        {!isLoading &&
+          sections &&
+          sections.map((section) => (
+            <ContentSection
+              key={section.id}
+              mainTitle={section.mainTitle}
+              content={section.content}
+            />
+          ))}
         {/* Empty Space */}
         <div className="py-24"></div>
       </main>
