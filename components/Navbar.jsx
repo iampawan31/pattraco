@@ -23,17 +23,17 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="w-1/2 md:w-1/4 flex justify-end items-center">
-            <div className="flex flex-col">
+            <div className="flex flex-col font-light">
               <div>
                 <a href="mailto:info@pattrco.com">
                   <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
-                  <span>info@pattrco.com</span>
+                  <span>info@pattraco.com</span>
                 </a>
               </div>
               <div>
-                <a href="tel:+918123565698">
+                <a href="tel:+919915381868">
                   <FontAwesomeIcon icon={faPhone} className="mr-2" />
-                  8123565698
+                  +91-9915381868
                 </a>
               </div>
             </div>

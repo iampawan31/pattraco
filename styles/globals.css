@@ -3,7 +3,11 @@
 @tailwind utilities;
 
 @layer utilities {
-  .main-height {
+  .main-height-with-footer {
     height: calc(100vh - 100px);
+  }
+
+  .main-height-without-footer {
+    height: calc(100vh - 56px);
   }
 }

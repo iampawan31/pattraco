@@ -4,7 +4,7 @@ import Image from 'next/image'
 // eslint-disable-next-line react/display-name
 const HomeCard = forwardRef(({ href, imageSrc, mainTitle, subTitle }, ref) => {
   return (
-    <a href={href} className="group">
+    <a href={href} className="group" ref={ref}>
       <div className="relative h-56 sm:h-60 md:h-full w-full">
         <Image
           src={imageSrc}
@@ -21,8 +21,8 @@ const HomeCard = forwardRef(({ href, imageSrc, mainTitle, subTitle }, ref) => {
         content-end cursor-pointer absolute top-0 left-0 flex
         flex-col justify-end text-gray-300 z-30 font-extralight px-2"
         >
-          <div className="text-3xl font-normal">{mainTitle}</div>
-          <div className="font-normal">{subTitle}</div>
+          <div className="text-3xl font-light">{mainTitle}</div>
+          <div className="font-light">{subTitle}</div>
         </div>
       </div>
     </a>

@@ -1,6 +1,4 @@
-import Head from 'next/head'
 import Link from 'next/link'
-import HomeSlide from '../components/HomeSlide'
 import HomeCard from '../components/HomeCard'
 import agroBg from '../public/agro.webp'
 import csrBg from '../public/csr.webp'
@@ -40,7 +38,7 @@ export default function Home() {
     },
     {
       id: 5,
-      href: '/yoru-soul-tribe',
+      href: '/your-soul-tribe',
       imageSrc: csrBg,
       mainTitle: 'Your Soul Tribe',
       subTitle: 'CSR',
@@ -49,7 +47,7 @@ export default function Home() {
 
   return (
     <div className="font-sans text-black px-2 md:px-0">
-      <main className="w-full md:main-height">
+      <main className="w-full md:main-height-with-footer">
         <div className="h-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5">
           {data.map(({ id, href, mainTitle, imageSrc, subTitle }) => (
             <Link key={id} href={href} passHref className="cursor-pointer">
