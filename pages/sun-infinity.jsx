@@ -82,7 +82,7 @@ const SunInfinity = () => {
             />
           ))}
         {/* Empty Space */}
-        <div className="py-24"></div>
+        <div className="py-6 md:py-24"></div>
       </main>
     </div>
   )
