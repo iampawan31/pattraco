@@ -23,7 +23,7 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="w-1/2 md:w-1/4 flex justify-end items-center">
-            <div className="flex flex-col font-light">
+            <div className="flex flex-col">
               <div>
                 <a href="mailto:info@pattrco.com">
                   <FontAwesomeIcon icon={faEnvelope} className="mr-2" />

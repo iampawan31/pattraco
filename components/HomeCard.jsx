@@ -21,8 +21,8 @@ const HomeCard = forwardRef(({ href, imageSrc, mainTitle, subTitle }, ref) => {
         content-end cursor-pointer absolute top-0 left-0 flex
         flex-col justify-end text-gray-300 z-30 font-extralight px-2"
         >
-          <div className="text-3xl font-light">{mainTitle}</div>
-          <div className="font-light">{subTitle}</div>
+          <div className="text-3xl ">{mainTitle}</div>
+          <div>{subTitle}</div>
         </div>
       </div>
     </a>
