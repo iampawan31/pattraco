@@ -40,7 +40,7 @@ const Zayaa = () => {
           </div>
         </div>
         <div className="flex justify-center">
-          <div className="grid grid-cols-1 pt-10 w-full max-w-5xl">
+          <div className="grid grid-cols-1 pt-4 md:pt-10 w-full max-w-5xl">
             {!isLoading &&
               sections &&
               sections.map((section) => (
