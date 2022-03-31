@@ -17,7 +17,7 @@ const HomeCard = forwardRef(({ href, imageSrc, mainTitle, subTitle }, ref) => {
         <div
           className="bg-gradient-to-t from-black/90 to-black/10
         group-hover:from-black/90 transition duration-300
-        group-hover:to-black/30 w-full h-full py-6 text-left
+        group-hover:to-black/30 w-full h-full py-2 md:py-6 text-left
         content-end cursor-pointer absolute top-0 left-0 flex
         flex-col justify-end text-gray-300 z-30 font-extralight px-2"
         >
