@@ -13,9 +13,9 @@ const HeroSection = ({ imageSrc, mainTitle, subTitle }) => {
           placeholder="blur"
         />
         <div
-          className="bg-gradient-to-l 
-      from-black/50 
-      to-black/5
+          className="md:bg-gradient-to-l 
+      md:from-black/50 
+      md:to-black/5
         w-full 
         h-full 
         py-6 
