@@ -6,13 +6,13 @@ import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons'
 
 const Navbar = () => {
   return (
-    <nav className="h-14 sticky w-full z-50 bg-white top-0 border-b shadow md:border-none md:shadow-none">
+    <nav className="h-16 sticky w-full z-50 bg-white top-0 border-b shadow md:border-none md:shadow-none">
       <div className="container h-full mx-auto px-4 md:px-0">
         <div className="flex h-full justify-between content-center items-center">
           <div className="hidden md:block w-1/4"></div>
           <div className="w-1/2 md:w-1/4 flex justify-start md:justify-center">
             <Link href="/" passHref>
-              <div className="relative h-10 w-24 md:h-12 md:w-28 cursor-pointer">
+              <div className="relative h-12 w-24 md:h-12 md:w-24 cursor-pointer">
                 <Image
                   src={Logo}
                   layout="fill"

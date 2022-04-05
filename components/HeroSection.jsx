@@ -33,12 +33,14 @@ const HeroSection = ({ imageSrc, mainTitle, subTitle }) => {
         z-30 
         font-extralight"
         />
-        <div className="absolute z-40 w-full md:w-fit left-0 md:left-auto flex md:flex-col items-center md:items-end bottom-0 md:bottom-0 md:right-0 bg-opacity-70 md:bg-opacity-60 bg-white  md:rounded-tl-xl px-2 md:px-4 py-1 md:py-4 md:text-right">
-          <div className="hidden md:flex text-3xl md:text-7xl md:mb-2 font-bold">
+        <div className="absolute z-40 w-full md:w-fit left-0 md:left-auto flex md:flex-col items-center md:items-end bottom-0 md:bottom-5 md:right-5 bg-opacity-70 md:bg-opacity-60 bg-black  md:rounded-xl px-2 md:px-4 py-1 md:py-4 md:text-right">
+          <div className="hidden md:flex text-3xl md:text-7xl md:mb-2 font-bold text-primary">
             {mainTitle}
           </div>
-          <div className="hidden md:flex text-3xl md:text-5xl">{subTitle}</div>
-          <div className="text-2xl md:hidden">
+          <div className="hidden md:flex text-3xl md:text-5xl text-primary">
+            {subTitle}
+          </div>
+          <div className="text-2xl md:hidden text-primary">
             {`${mainTitle} - ${subTitle}`}
           </div>
         </div>

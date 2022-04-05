@@ -47,8 +47,8 @@ export default function Home() {
 
   return (
     <div className="px-2 md:px-0">
-      <main className="w-full md:main-height-with-footer">
-        <div className="h-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5">
+      <main className="w-full h-full">
+        <div className="h-full md:main-height-without-footer grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5">
           {data.map(({ id, href, mainTitle, imageSrc, subTitle }) => (
             <Link key={id} href={href} passHref className="cursor-pointer">
               <HomeCard
