@@ -8,7 +8,7 @@ const ContentSectionCard = ({ mainTitle, content, imageSrc }) => {
           <Image
             src={imageSrc}
             layout="fill"
-            className="rounded-t md:rounded-l-lg"
+            className="rounded-t-lg md:rounded-tr-none md:rounded-l-lg"
             objectFit="cover"
             placeholder="blur"
             alt={mainTitle}

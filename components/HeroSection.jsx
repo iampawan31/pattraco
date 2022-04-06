@@ -39,9 +39,6 @@ const HeroSection = ({ imageSrc, mainTitle, subTitle }) => {
           <div className="flex text-2xl md:text-5xl text-primary">
             {subTitle}
           </div>
-          {/* <div className="text-3xl md:hidden text-primary">
-            {`${mainTitle} - ${subTitle}`}
-          </div> */}
         </div>
       </div>
     </div>
