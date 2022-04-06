@@ -1,24 +1,37 @@
 import Head from 'next/head'
-import { useEffect, useState } from 'react'
-import ContentSectionCard from '../components/ContentSectionCard'
+import ContentSectionGrid from '../components/ContentSectionGrid'
 import HeroSection from '../components/HeroSection'
 import PaddingLayout from '../components/PaddingLayout'
-import agroBg from '../public/agro.webp'
+import agroImageOne from '../public/agro/agro-image-1.webp'
+import agroImageTwo from '../public/agro/agro-image-2.webp'
+import agroImageFour from '../public/agro/agro-image-4.webp'
+import agroBg from '../public/agro/agro-image.webp'
+
+const sections = [
+  {
+    id: 1,
+    imageSrc: agroImageTwo,
+    mainTitle: 'Plantations',
+    content:
+      "At SAIBARRELCO we have north-India's more scientific eco-farming concepts in conserving one of the world’s oldest plant species, by foraying into the potential of US$3.6Billion in the Indian Agro-Forestry commercial. We are regenerating one of the most demanded & endangered forest species, and have also established plantations as an AgroForestry concept.",
+  },
+  {
+    id: 2,
+    imageSrc: agroImageOne,
+    mainTitle: 'Farming & Storage',
+    content:
+      'Our growing farm acreage across India, enables us to create a sustainable environment and also encourage crop rotations to increase land fertility. With the most modern harvest technologies, innovative storage and upcoming controlled Atmosphere stores, we are bringing food to the table - as fresh as possible. ',
+  },
+  {
+    id: 3,
+    imageSrc: agroImageFour,
+    mainTitle: 'Farm to Table',
+    content:
+      'We encourage integrated farm produces to reach our customers as soon as possible, so that they can savour high-quality food.',
+  },
+]
 
 const Saibarrelco = () => {
-  const [sections, setSections] = useState(null)
-  const [isLoading, setLoading] = useState(false)
-
-  useEffect(() => {
-    setLoading(true)
-    fetch('api/saibarrelco')
-      .then((res) => res.json())
-      .then((data) => {
-        setSections(data.sections)
-        setLoading(false)
-      })
-  }, [])
-
   return (
     <div>
       <Head>
@@ -33,17 +46,7 @@ const Saibarrelco = () => {
           subTitle="Agro Technology"
         />
         <div className="flex justify-center">
-          <div className="grid grid-cols-1 pt-4 md:pt-10 w-full max-w-5xl">
-            {!isLoading &&
-              sections &&
-              sections.map((section) => (
-                <ContentSectionCard
-                  key={section.id}
-                  mainTitle={section.mainTitle}
-                  content={section.content}
-                />
-              ))}
-          </div>
+          <ContentSectionGrid sections={sections} />
         </div>
         <PaddingLayout />
       </main>

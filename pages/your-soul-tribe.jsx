@@ -1,24 +1,29 @@
 import Head from 'next/head'
-import { useEffect, useState } from 'react'
-import ContentSectionCard from '../components/ContentSectionCard'
+import ContentSectionGrid from '../components/ContentSectionGrid'
 import HeroSection from '../components/HeroSection'
 import PaddingLayout from '../components/PaddingLayout'
 import csrBg from '../public/csr.webp'
+import csrImageOne from '../public/csr/csr-image-1.webp'
+import csrImageTwo from '../public/csr/csr-image-2.webp'
+
+const sections = [
+  {
+    id: 1,
+    imageSrc: csrImageOne,
+    mainTitle: 'Positive Mental Health Aids',
+    content:
+      'We understand closely that in the 21st century, the advent of technology leaves limited space for focus on personal mental. At Your Soul Tribe - we create content, group activities and sustainable lifestyle habit classes - for children and adults, to encourage a happier living.',
+  },
+  {
+    id: 2,
+    imageSrc: csrImageTwo,
+    mainTitle: 'Food Drives',
+    content:
+      'We aim at eradicating hunger and that two-square meals are delivered to as many people as possible. This encourages us at Your Soul Tribe to conduct food drives, dry meal package deliveries and sanitization kits to people who have limited access to it. Our goal is to reach out to as many locations as possible and bring about a change. Though a drop in the ocean, but a responsible one. ',
+  },
+]
 
 const YourSoulTribe = () => {
-  const [sections, setSections] = useState(null)
-  const [isLoading, setLoading] = useState(false)
-
-  useEffect(() => {
-    setLoading(true)
-    fetch('api/your-soul-tribe')
-      .then((res) => res.json())
-      .then((data) => {
-        setSections(data.sections)
-        setLoading(false)
-      })
-  }, [])
-
   return (
     <div>
       <Head>
@@ -33,22 +38,12 @@ const YourSoulTribe = () => {
           subTitle="CSR"
         />
         <div className="py-6 md:py-10 bg-white">
-          <div className="container mx-auto bg-white text-xl md:text-2xl md:text-center font-normal px-2 md:px-0">
+          <div className="container mx-auto bg-white text-xl md:text-4xl md:text-center font-light px-2 md:px-0">
             Giving back to the society is what we strive for.
           </div>
         </div>
         <div className="flex justify-center">
-          <div className="grid grid-cols-1 pt-4 md:pt-10 w-full max-w-5xl">
-            {!isLoading &&
-              sections &&
-              sections.map((section) => (
-                <ContentSectionCard
-                  key={section.id}
-                  mainTitle={section.mainTitle}
-                  content={section.content}
-                />
-              ))}
-          </div>
+          <ContentSectionGrid sections={sections} />
         </div>
         <PaddingLayout />
       </main>

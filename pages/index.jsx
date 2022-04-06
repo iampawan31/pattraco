@@ -1,10 +1,10 @@
 import Link from 'next/link'
 import HomeCard from '../components/HomeCard'
-import agroBg from '../public/agro.webp'
+import agroBg from '../public/agro/agro-image.webp'
 import csrBg from '../public/csr.webp'
-import fmcgBg from '../public/fmcg.webp'
-import miningBg from '../public/mining.webp'
-import solarBg from '../public/solar-panel.webp'
+import fmcgBg from '../public/fmcg/fmcg-image-1.webp'
+import miningBg from '../public/mining/mining.webp'
+import solarBg from '../public/solar/solar-panel-alternate.webp'
 
 export default function Home() {
   const data = [

@@ -1,25 +1,53 @@
 import Head from 'next/head'
-import { useEffect, useState } from 'react'
-import ContentSection from '../components/ContentSection'
-import ContentSectionCard from '../components/ContentSectionCard'
+import ContentSectionGrid from '../components/ContentSectionGrid'
 import HeroSection from '../components/HeroSection'
 import PaddingLayout from '../components/PaddingLayout'
-import solarBg from '../public/solar-panel.webp'
+import solarBg from '../public/solar/solar-panel-alternate.webp'
+import solarImageOne from '../public/solar/solar-panel-image-1.webp'
+import solarImageTwo from '../public/solar/solar-panel-image-2.webp'
+import solarImageThree from '../public/solar/solar-panel-image-3.webp'
+import solarImageFour from '../public/solar/solar-panel-image-4.webp'
+import solarImageFive from '../public/solar/solar-panel-image-5.webp'
+
+const sections = [
+  {
+    id: 1,
+    imageSrc: solarImageOne,
+    mainTitle: 'What We Do',
+    content:
+      "We manifest the infinite power of the sun in the form of renewable energy. Pattraco's solar endeavour - SUN INFINITY, is one of the largest solar power manufacturers in India. With our projects in north-western Rajasthan, India we supply renewable energy to central and state government utilities and independent industrial and commercial customers at predictable fixed prices. Since our renewable power generation does not rely on fossil fuels, our electricity prices are insulated from the volatility of input commodity pricing. We also provide delivery commitments for the electricity production of our power plants to our customers.",
+  },
+  {
+    id: 2,
+    imageSrc: solarImageTwo,
+    mainTitle: 'Low Cost of Energy',
+    content:
+      'We have lowered our cost of renewable power generation through value engineering, operational performance monitoring and strong financial strengths. This allows us to deliver cost-effective energy for our customers. Our in-house EPC expertise lowers system costs and our advanced in-house operations and maintenance capability allows us to increase power yields and monitor project performance near real-time. Coupled with our strong financial strategy, we believe that we are able to offer low-cost renewable power solutions at high efficiency yields.',
+  },
+  {
+    id: 3,
+    imageSrc: solarImageThree,
+    mainTitle: 'Strong Value Proposition for Our Customers',
+    content:
+      'We manage the entire development and operation process, providing customers with long term certainty under fixed price PPAs. Our in-house focus on high engineering standards and asset quality and maintenance ensures high levels of availability and service to our customers.',
+  },
+  {
+    id: 4,
+    imageSrc: solarImageFour,
+    mainTitle: 'Integrated Profile',
+    content:
+      'Our integrated profile affords us greater control over project development, construction and operation, which provides us with greater insight and certainty on our construction costs and timeline and operations and maintenance.',
+  },
+  {
+    id: 5,
+    imageSrc: solarImageFive,
+    mainTitle: 'Strong Community Partnership',
+    content:
+      'We hire from local communities and generally lease land with few alternative uses, providing local communities with a stream of discretionary cash flow without displacing alternative businesses. As a result we are able to build long-term community relationships, which allows us to improve our completion time, further reducing project development risk.',
+  },
+]
 
 const SunInfinity = () => {
-  const [sections, setSections] = useState(null)
-  const [isLoading, setLoading] = useState(false)
-
-  useEffect(() => {
-    setLoading(true)
-    fetch('api/sun-infinity')
-      .then((res) => res.json())
-      .then((data) => {
-        setSections(data.sections)
-        setLoading(false)
-      })
-  }, [])
-
   return (
     <div>
       <Head>
@@ -34,17 +62,7 @@ const SunInfinity = () => {
           subTitle="Solar"
         />
         <div className="flex justify-center">
-          <div className="grid grid-cols-1 pt-4 md:pt-10 w-full max-w-5xl">
-            {!isLoading &&
-              sections &&
-              sections.map((section) => (
-                <ContentSectionCard
-                  key={section.id}
-                  mainTitle={section.mainTitle}
-                  content={section.content}
-                />
-              ))}
-          </div>
+          <ContentSectionGrid sections={sections} />
         </div>
         <PaddingLayout />
       </main>

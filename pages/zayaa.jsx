@@ -1,24 +1,45 @@
 import Head from 'next/head'
-import { useEffect, useState } from 'react'
-import ContentSectionCard from '../components/ContentSectionCard'
+import ContentSectionGrid from '../components/ContentSectionGrid'
 import HeroSection from '../components/HeroSection'
 import PaddingLayout from '../components/PaddingLayout'
-import miningBg from '../public/mining.webp'
+import miningBg from '../public/mining/mining.webp'
+import miningImageOne from '../public/mining/mining-image-1.webp'
+import miningImageTwo from '../public/mining/mining-image-2.webp'
+import miningImageThree from '../public/mining/mining-image-3.webp'
+import miningImageFour from '../public/mining/mining-image-4.webp'
+
+const sections = [
+  {
+    id: 1,
+    imageSrc: miningImageOne,
+    mainTitle: 'What We Do',
+    content:
+      'At ZAYAA, we encourage ethical earth-mining of natural gemstones in various parts of the world. From indigenous mines at Panna, Madhya Pradesh, India to Lucra mines in Botswana, we have the widest range and collection of natural diamonds and gemstones. ',
+  },
+  {
+    id: 2,
+    imageSrc: miningImageTwo,
+    mainTitle: 'High-Jewelry and Certified Diamonds and Gemstones',
+    content:
+      'At ZAYAA, we are certified exporters of natural diamonds and colored gemstones. Our artisan and handmade jewelry is adored for its finesse, quality and world-class quality. ',
+  },
+  {
+    id: 3,
+    imageSrc: miningImageThree,
+    mainTitle: 'From mine to jewelry advantage',
+    content:
+      'With our reach to the most authentic mines for gemstones such as diamonds, emeralds, rubies, sapphires, coral and many more - we are able to provide our esteemed customers with high-jewelry with price excellence. With a repeat rate of over 94% we are proud of our quality and deliverance of goods across the world. ',
+  },
+  {
+    id: 4,
+    imageSrc: miningImageFour,
+    mainTitle: 'Strong Community Partnership',
+    content:
+      'We hire from local communities and generally work with artisans and craftsman to encourage handmade production. As a result we are able to build long-term community relationships, which allows us to build a sustainable jewelry delivery model across the world.',
+  },
+]
 
 const Zayaa = () => {
-  const [sections, setSections] = useState(null)
-  const [isLoading, setLoading] = useState(false)
-
-  useEffect(() => {
-    setLoading(true)
-    fetch('api/zayaa')
-      .then((res) => res.json())
-      .then((data) => {
-        setSections(data.sections)
-        setLoading(false)
-      })
-  }, [])
-
   return (
     <div>
       <Head>
@@ -33,26 +54,15 @@ const Zayaa = () => {
           subTitle="Earth Mined"
         />
         <div className="py-6 md:py-10 bg-white">
-          <div className="container mx-auto bg-white text-xl md:text-2xl md:text-center font-normal px-2 md:px-0">
+          <div className="container mx-auto bg-white text-xl md:text-4xl md:text-center font-light px-2 md:px-0">
             With the bounty of goodness Mother earth has to offer,
             Pattraco&apos;s earth-mined goods under ZAYAA, delivers highest
             quality of natural diamonds and gemstones.
           </div>
         </div>
         <div className="flex justify-center">
-          <div className="grid grid-cols-1 pt-4 md:pt-10 w-full max-w-5xl">
-            {!isLoading &&
-              sections &&
-              sections.map((section) => (
-                <ContentSectionCard
-                  key={section.id}
-                  mainTitle={section.mainTitle}
-                  content={section.content}
-                />
-              ))}
-          </div>
+          <ContentSectionGrid sections={sections} />
         </div>
-
         <PaddingLayout />
       </main>
     </div>

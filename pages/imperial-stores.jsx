@@ -1,24 +1,29 @@
 import Head from 'next/head'
-import { useEffect, useState } from 'react'
-import ContentSectionCard from '../components/ContentSectionCard'
+import ContentSectionGrid from '../components/ContentSectionGrid'
 import HeroSection from '../components/HeroSection'
 import PaddingLayout from '../components/PaddingLayout'
-import fmcgBg from '../public/fmcg.webp'
+import fmcgImageOne from '../public/fmcg/fmcg-image-1.webp'
+import fmcgImageTwo from '../public/fmcg/fmcg-image-2.webp'
+import fmcgImageThree from '../public/fmcg/fmcg-image-3.webp'
+
+const sections = [
+  {
+    id: 1,
+    imageSrc: fmcgImageTwo,
+    mainTitle: 'Health Food Innovatives',
+    content:
+      'Our partnership with leading Indian brands, that manufacture healthy, preservative free foods - is loved by our customers. The promise of health is delivered at Imperial Stores.',
+  },
+  {
+    id: 2,
+    imageSrc: fmcgImageThree,
+    mainTitle: 'Cost Effective Luxury',
+    content:
+      'Fast moving consumer goods - are closely connected to your health. And we understand the value of your safety. This encourages us to create the most effective, supply chain - which is not only affordable - but also promises the luxury your body deserves.',
+  },
+]
 
 const ImperialStores = () => {
-  const [sections, setSections] = useState(null)
-  const [isLoading, setLoading] = useState(false)
-
-  useEffect(() => {
-    setLoading(true)
-    fetch('api/imperial-stores')
-      .then((res) => res.json())
-      .then((data) => {
-        setSections(data.sections)
-        setLoading(false)
-      })
-  }, [])
-
   return (
     <div>
       <Head>
@@ -28,12 +33,12 @@ const ImperialStores = () => {
       </Head>
       <main className="bg-gray-100">
         <HeroSection
-          imageSrc={fmcgBg}
+          imageSrc={fmcgImageOne}
           mainTitle="Imperial Stores"
           subTitle="FMCG Retail"
         />
         <div className="py-6 md:py-10 bg-white flex justify-center flex-col">
-          <div className="container mx-auto bg-white text-xl md:text-2xl font-normal md:text-center px-2 md:px-0">
+          <div className="container mx-auto bg-white text-xl md:text-4xl font-light md:text-center px-2 md:px-0">
             The buzzing new era of DIY - hygiene-conscious food, we bring
             Imperial Stores to multiple cities of India.
           </div>
@@ -45,17 +50,7 @@ const ImperialStores = () => {
           </div>
         </div>
         <div className="flex justify-center">
-          <div className="grid grid-cols-1 pt-4 md:pt-10 w-full max-w-5xl">
-            {!isLoading &&
-              sections &&
-              sections.map((section) => (
-                <ContentSectionCard
-                  key={section.id}
-                  mainTitle={section.mainTitle}
-                  content={section.content}
-                />
-              ))}
-          </div>
+          <ContentSectionGrid sections={sections} />
         </div>
         <PaddingLayout />
       </main>
