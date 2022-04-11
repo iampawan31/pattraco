@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import Link from 'next/link'
 import HomeCard from '../components/HomeCard'
 import agroBg from '../public/agro/agro-image.webp'
@@ -46,20 +47,28 @@ export default function Home() {
   ]
 
   return (
-    <div className="px-2 md:px-0">
-      <main className="w-full h-full">
-        <div className="h-full md:main-height-without-footer grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5">
-          {data.map(({ id, href, mainTitle, imageSrc, subTitle }) => (
-            <Link key={id} href={href} passHref className="cursor-pointer">
-              <HomeCard
-                imageSrc={imageSrc}
-                mainTitle={mainTitle}
-                subTitle={subTitle}
-              />
-            </Link>
-          ))}
-        </div>
-      </main>
-    </div>
+    <motion.div exit={{ opacity: 0 }} initial="initial" animate="animate">
+      <div className="px-2 md:px-0">
+        <main className="w-full h-full">
+          <div className="h-full md:main-height-without-footer grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5">
+            {data.map(({ id, href, mainTitle, imageSrc, subTitle }) => (
+              <Link
+                key={id}
+                href={href}
+                as={href}
+                passHref
+                className="cursor-pointer"
+              >
+                <HomeCard
+                  imageSrc={imageSrc}
+                  mainTitle={mainTitle}
+                  subTitle={subTitle}
+                />
+              </Link>
+            ))}
+          </div>
+        </main>
+      </div>
+    </motion.div>
   )
 }
