@@ -10,9 +10,12 @@ module.exports = {
       colors: {
         primary: '#97B434',
         'primary-dark': '#505A1B',
+        'primary-background': '#f2f5f7',
+        'primary-font': '#5d7079',
+        'secondary-font': '#37517e',
       },
       fontFamily: {
-        sans: ['Montserrat', ...defaultTheme.fontFamily.sans],
+        sans: ['Raleway', ...defaultTheme.fontFamily.sans],
       },
       backgroundImage: {
         solarBg: "url('/solar-panel.jpeg)",
