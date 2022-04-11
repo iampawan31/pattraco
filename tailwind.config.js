@@ -12,7 +12,7 @@ module.exports = {
         'primary-dark': '#505A1B',
       },
       fontFamily: {
-        sans: ['Nunito', ...defaultTheme.fontFamily.sans],
+        sans: ['Montserrat', ...defaultTheme.fontFamily.sans],
       },
       backgroundImage: {
         solarBg: "url('/solar-panel.jpeg)",
