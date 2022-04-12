@@ -22,7 +22,7 @@ const Navbar = () => {
               </div>
             </Link>
           </div>
-          <div className="w-1/2 md:w-1/4 flex justify-end items-center">
+          <div className="w-1/2 md:w-1/4 text-sm md:text-base flex justify-end items-center">
             <div className="flex flex-col">
               <div>
                 <a href="mailto:info@pattrco.com">

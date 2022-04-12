@@ -41,6 +41,9 @@ module.exports = {
       transitionProperty: {
         background: 'background',
       },
+      height: {
+        128: '32rem',
+      },
     },
   },
   plugins: [],
