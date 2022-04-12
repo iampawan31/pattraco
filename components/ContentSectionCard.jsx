@@ -16,7 +16,7 @@ const ContentSectionCard = ({ mainTitle, content, imageSrc }) => {
           />
         </div>
         <div className="w-full px-4 py-4">
-          <h2 className="text-3xl pb-4 text-primary font-semibold">
+          <h2 className="text-3xl pb-4 text-primary font-medium">
             {mainTitle}
           </h2>
           <p className="text-lg">{content}</p>
