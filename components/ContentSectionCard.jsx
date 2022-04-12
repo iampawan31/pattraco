@@ -5,7 +5,7 @@ const ContentSectionCard = ({ mainTitle, content, imageSrc }) => {
   return (
     <div className="w-full h-full bg-white rounded-lg shadow">
       <div className="flex flex-col md:flex-row space-y-4 md:space-x-4">
-        <div className="relative min-h-full h-48 md:h-128 w-full">
+        <div className="relative min-h-full h-72 md:h-128 w-full">
           <Image
             src={imageSrc}
             layout="fill"
