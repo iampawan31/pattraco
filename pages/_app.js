@@ -7,11 +7,11 @@ config.autoAddCss = false
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Layout>
-      <AnimatePresence exitBeforeEnter>
+    <AnimatePresence exitBeforeEnter>
+      <Layout>
         <Component {...pageProps} />
-      </AnimatePresence>
-    </Layout>
+      </Layout>
+    </AnimatePresence>
   )
 }
 

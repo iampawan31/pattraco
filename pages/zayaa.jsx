@@ -8,6 +8,7 @@ import miningImageTwo from '../public/mining/mining-image-2.webp'
 import miningImageThree from '../public/mining/mining-image-3.webp'
 import miningImageFour from '../public/mining/mining-image-4.webp'
 import miningBg from '../public/mining/mining.webp'
+import { fadeIn } from '../utils/animation-variants'
 
 const sections = [
   {
@@ -55,11 +56,18 @@ const Zayaa = () => {
           subTitle="Earth Mined"
         />
         <div className="py-6 md:py-10 bg-white">
-          <div className="container mx-auto bg-white text-xl md:text-4xl md:text-center font-light px-2 md:px-0">
-            With the bounty of goodness Mother earth has to offer,
-            Pattraco&apos;s earth-mined goods under ZAYAA, delivers highest
-            quality of natural diamonds and gemstones.
-          </div>
+          <motion.div
+            initial="hidden"
+            viewport={{ once: true }}
+            whileInView="visible"
+            variants={fadeIn}
+          >
+            <div className="container mx-auto bg-white text-xl md:text-4xl md:text-center font-light px-2 md:px-0">
+              With the bounty of goodness Mother earth has to offer,
+              Pattraco&apos;s earth-mined goods under ZAYAA, delivers highest
+              quality of natural diamonds and gemstones.
+            </div>
+          </motion.div>
         </div>
         <div className="flex justify-center">
           <ContentSectionGrid sections={sections} />

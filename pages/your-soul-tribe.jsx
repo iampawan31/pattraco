@@ -6,6 +6,7 @@ import PaddingLayout from '../components/PaddingLayout'
 import csrBg from '../public/csr.webp'
 import csrImageOne from '../public/csr/csr-image-1.webp'
 import csrImageTwo from '../public/csr/csr-image-2.webp'
+import { fadeIn } from '../utils/animation-variants'
 
 const sections = [
   {
@@ -39,9 +40,16 @@ const YourSoulTribe = () => {
           subTitle="CSR"
         />
         <div className="py-6 md:py-10 bg-white">
-          <div className="container mx-auto bg-white text-xl md:text-4xl md:text-center font-light px-2 md:px-0">
-            Giving back to the society is what we strive for.
-          </div>
+          <motion.div
+            initial="hidden"
+            viewport={{ once: true }}
+            whileInView="visible"
+            variants={fadeIn}
+          >
+            <div className="container mx-auto bg-white text-xl md:text-4xl md:text-center font-light px-2 md:px-0">
+              Giving back to the society is what we strive for.
+            </div>
+          </motion.div>
         </div>
         <div className="flex justify-center">
           <ContentSectionGrid sections={sections} />

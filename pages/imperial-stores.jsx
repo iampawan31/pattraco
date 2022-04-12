@@ -6,6 +6,7 @@ import PaddingLayout from '../components/PaddingLayout'
 import fmcgImageOne from '../public/fmcg/fmcg-image-1.webp'
 import fmcgImageTwo from '../public/fmcg/fmcg-image-2.webp'
 import fmcgImageThree from '../public/fmcg/fmcg-image-3.webp'
+import { fadeIn } from '../utils/animation-variants'
 
 const sections = [
   {
@@ -39,16 +40,30 @@ const ImperialStores = () => {
           subTitle="FMCG Retail"
         />
         <div className="py-6 md:py-10 bg-white flex justify-center flex-col">
-          <div className="container mx-auto bg-white text-xl md:text-4xl font-light md:text-center px-2 md:px-0">
-            The buzzing new era of DIY - hygiene-conscious food, we bring
-            Imperial Stores to multiple cities of India.
-          </div>
-          <div className="max-w-3xl self-center text-base md:text-lg md:text-center mt-4 px-2 md:px-0">
-            With our growing presence in Chandigarh, Gurgaon, New Delhi,
-            Patiala, Amritsar, Jaipur, and many more cities, we create the most
-            efficient, organized and hygienic shopping experiences for our
-            customers.
-          </div>
+          <motion.div
+            initial="hidden"
+            viewport={{ once: true }}
+            whileInView="visible"
+            variants={fadeIn}
+          >
+            <div className="container mx-auto bg-white text-xl md:text-4xl font-light md:text-center px-2 md:px-0">
+              The buzzing new era of DIY - hygiene-conscious food, we bring
+              Imperial Stores to multiple cities of India.
+            </div>
+          </motion.div>
+          <motion.div
+            initial="hidden"
+            viewport={{ once: true }}
+            whileInView="visible"
+            variants={fadeIn}
+          >
+            <div className="max-w-3xl flex justify-center mx-auto self-center text-base md:text-lg md:text-center mt-4 px-2 md:px-0">
+              With our growing presence in Chandigarh, Gurgaon, New Delhi,
+              Patiala, Amritsar, Jaipur, and many more cities, we create the
+              most efficient, organized and hygienic shopping experiences for
+              our customers.
+            </div>
+          </motion.div>
         </div>
         <div className="flex justify-center">
           <ContentSectionGrid sections={sections} />
