@@ -2,7 +2,7 @@ export const slideLeft = {
   hidden: {
     opacity: 0,
     scale: 0.8,
-    x: 600,
+    x: 50,
     y: 0,
   },
   visible: {

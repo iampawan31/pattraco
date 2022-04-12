@@ -15,7 +15,7 @@ module.exports = {
         'secondary-font': '#37517e',
       },
       fontFamily: {
-        sans: ['Raleway', ...defaultTheme.fontFamily.sans],
+        sans: ['Merriweather', ...defaultTheme.fontFamily.sans],
       },
       backgroundImage: {
         solarBg: "url('/solar-panel.jpeg)",

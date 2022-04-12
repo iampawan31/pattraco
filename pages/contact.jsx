@@ -5,6 +5,7 @@ import Head from 'next/head'
 import { useEffect, useState } from 'react'
 import PaddingLayout from '../components/PaddingLayout'
 import ContactSVG from '../public/blogging.svg'
+import { fadeIn } from '../utils/animation-variants'
 
 const Saibarrelco = () => {
   const [sections, setSections] = useState(null)
@@ -32,68 +33,71 @@ const Saibarrelco = () => {
           <div className="w-1/2 hidden md:block">
             <ContactSVG />
           </div>
+
           <div className="w-full md:w-1/2 bg-white shadow rounded p-6 mx-auto">
-            <div className="text-4xl pb-1 mb-2 font-semibold">Contact Us</div>
-            <div className="flex flex-col md:flex-row md:space-x-6 mb-6">
-              <div>
-                <a href="mailto:info@pattrco.com">
-                  <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
-                  <span>info@pattraco.com</span>
-                </a>
+            <motion.div initial="hidden" animate="visible" variants={fadeIn}>
+              <div className="text-4xl pb-1 mb-2 font-semibold">Contact Us</div>
+              <div className="flex flex-col md:flex-row md:space-x-6 mb-6">
+                <div>
+                  <a href="mailto:info@pattrco.com">
+                    <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
+                    <span>info@pattraco.com</span>
+                  </a>
+                </div>
+                <div>
+                  <a href="tel:+919915381868">
+                    <FontAwesomeIcon icon={faPhone} className="mr-2" />
+                    +91-9915381868
+                  </a>
+                </div>
+              </div>
+              <div className="flex flex-col mb-2">
+                <label htmlFor="name">Full Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  className="border border-primary px-2 py-4 bg-white rounded w-full "
+                  id="name"
+                  placeholder="John Doe"
+                />
+              </div>
+              <div className="flex flex-col mb-2">
+                <label htmlFor="email">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  className="border border-primary px-2 py-4 bg-white rounded w-full "
+                  id="email"
+                  placeholder="johndoe@gmail.com"
+                />
+              </div>
+              <div className="flex flex-col mb-2">
+                <label htmlFor="phone">Phone</label>
+                <input
+                  type="text"
+                  name="phone"
+                  className="border border-primary px-2 py-4 bg-white rounded w-full "
+                  id="phone"
+                  placeholder="+91-XXXXXXXXXX"
+                />
+              </div>
+              <div className="flex flex-col mb-4">
+                <label htmlFor="message" className="text-sm">
+                  Message
+                </label>
+                <textarea
+                  name="message"
+                  className="border border-primary px-2 py-4 bg-white rounded w-full "
+                  id="phone"
+                  placeholder="Your message here..."
+                />
               </div>
               <div>
-                <a href="tel:+919915381868">
-                  <FontAwesomeIcon icon={faPhone} className="mr-2" />
-                  +91-9915381868
-                </a>
+                <button className="text-white bg-primary text-xl font-normal uppercase w-full  px-2 py-4 rounded hover:bg-black/70 transition">
+                  Send Message
+                </button>
               </div>
-            </div>
-            <div className="flex flex-col mb-2">
-              <label htmlFor="name">Full Name</label>
-              <input
-                type="text"
-                name="name"
-                className="border border-primary px-2 py-4 bg-white rounded w-full "
-                id="name"
-                placeholder="John Doe"
-              />
-            </div>
-            <div className="flex flex-col mb-2">
-              <label htmlFor="email">Email</label>
-              <input
-                type="email"
-                name="email"
-                className="border border-primary px-2 py-4 bg-white rounded w-full "
-                id="email"
-                placeholder="johndoe@gmail.com"
-              />
-            </div>
-            <div className="flex flex-col mb-2">
-              <label htmlFor="phone">Phone</label>
-              <input
-                type="text"
-                name="phone"
-                className="border border-primary px-2 py-4 bg-white rounded w-full "
-                id="phone"
-                placeholder="+91-XXXXXXXXXX"
-              />
-            </div>
-            <div className="flex flex-col mb-4">
-              <label htmlFor="message" className="text-sm">
-                Message
-              </label>
-              <textarea
-                name="message"
-                className="border border-primary px-2 py-4 bg-white rounded w-full "
-                id="phone"
-                placeholder="Your message here..."
-              />
-            </div>
-            <div>
-              <button className="text-white bg-primary text-xl font-normal uppercase w-full  px-2 py-4 rounded hover:bg-black/70 transition">
-                Send Message
-              </button>
-            </div>
+            </motion.div>
           </div>
         </div>
         <PaddingLayout />
