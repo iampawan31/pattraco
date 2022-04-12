@@ -62,7 +62,7 @@ const Zayaa = () => {
             whileInView="visible"
             variants={fadeIn}
           >
-            <div className="container mx-auto bg-white text-xl md:text-4xl md:text-center font-light px-2 md:px-0">
+            <div className="container mx-auto bg-white text-xl font-medium md:text-4xl md:text-center px-2 md:px-0">
               With the bounty of goodness Mother earth has to offer,
               Pattraco&apos;s earth-mined goods under ZAYAA, delivers highest
               quality of natural diamonds and gemstones.

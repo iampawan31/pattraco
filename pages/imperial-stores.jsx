@@ -46,7 +46,7 @@ const ImperialStores = () => {
             whileInView="visible"
             variants={fadeIn}
           >
-            <div className="container mx-auto bg-white text-xl md:text-4xl font-light md:text-center px-2 md:px-0">
+            <div className="container mx-auto bg-white text-xl md:text-4xl font-medium md:text-center px-2 md:px-0">
               The buzzing new era of DIY - hygiene-conscious food, we bring
               Imperial Stores to multiple cities of India.
             </div>

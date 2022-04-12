@@ -46,7 +46,7 @@ const YourSoulTribe = () => {
             whileInView="visible"
             variants={fadeIn}
           >
-            <div className="container mx-auto bg-white text-xl md:text-4xl md:text-center font-light px-2 md:px-0">
+            <div className="container mx-auto bg-white text-xl md:text-4xl md:text-center font-medium px-2 md:px-0">
               Giving back to the society is what we strive for.
             </div>
           </motion.div>
