@@ -4,10 +4,10 @@
 
 @layer utilities {
   .main-height-with-footer {
-    height: calc(100vh - 164px);
+    height: calc(100vh - 100px);
   }
 
   .main-height-without-footer {
-    height: calc(100vh - 128px);
+    height: calc(100vh - 112px);
   }
 }
