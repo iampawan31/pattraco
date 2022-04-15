@@ -1,6 +1,8 @@
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 import Link from 'next/link'
 import Logo from '../public/logo.png'
+import { useState, useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faEnvelope,
@@ -10,13 +12,26 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 
 const Navbar = () => {
-  const menuOpen = false
+  const [menuOpen, setMenuOpen] = useState(false)
+  const router = useRouter()
+  const { pathname } = router
+
+  const onLinkClick = () => {
+    setMenuOpen((prev) => !prev)
+  }
+
+  useEffect(() => {
+    if (menuOpen) {
+      setMenuOpen(false)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pathname])
 
   return (
-    <nav className="h-28 sticky w-full z-50 bg-white top-0 border-b shadow md:border-none md:shadow-none">
+    <nav className="h-24 sticky w-full z-50 bg-white top-0 border-b shadow md:border-none md:shadow-none">
       {/* Top Menu */}
-      <div className="py-2 bg-primary">
-        <div className="container h-full mx-auto px-4 md:px-0">
+      <div className="h-8 bg-primary flex items-center">
+        <div className="container h-auto mx-auto px-4 md:px-0">
           <div className="text-sm md:text-base space-x-2 flex justify-center md:justify-end items-center">
             <div>
               <a href="mailto:info@pattrco.com">
@@ -34,8 +49,8 @@ const Navbar = () => {
         </div>
       </div>
       {/* Main Menu */}
-      <div className="container py-2 h-full mx-auto px-4 md:px-0">
-        <div className="flex h-auto justify-between content-center items-center">
+      <div className="container h-16 mx-auto px-4 md:px-0">
+        <div className="flex h-full justify-between items-center">
           <div className="w-3/12">
             <Link href="/" passHref>
               <div className="relative h-12 w-24 md:h-12 md:w-24 cursor-pointer">
@@ -48,8 +63,9 @@ const Navbar = () => {
               </div>
             </Link>
           </div>
+          {/* Mobile Menu Open Button */}
           <div className="flex w-9/12 md:hidden justify-end items-center">
-            <button>
+            <button onClick={onLinkClick}>
               <FontAwesomeIcon
                 size="2x"
                 icon={menuOpen ? faXmark : faBars}
@@ -57,6 +73,7 @@ const Navbar = () => {
               />
             </button>
           </div>
+          {/* Main Navigation */}
           <div className="hidden w-9/12 md:flex justify-end flex-col md:flex-row items-center space-y-2 md:space-y-0 space-x-0 md:space-x-6 uppercase h-full md:h-12">
             <Link href="/">
               <a className="hover:border-b-2 hover:border-primary transition h-6 font-semibold text-xl md:text-base ">
@@ -95,44 +112,69 @@ const Navbar = () => {
             </Link>
           </div>
         </div>
-        <div className="hidden h-auto justify-between content-center items-center">
-          <div className="flex w-full justify-center flex-col md:flex-row items-center space-y-2 md:space-y-0 space-x-0 md:space-x-6 uppercase h-full md:h-12">
-            <Link href="/">
-              <a className="hover:border-b-2 hover:border-primary transition h-6 font-semibold text-xl md:text-base ">
-                Home
-              </a>
-            </Link>
-            <Link href="/sun-infinity">
-              <a className="text-primary hover:border-b-2 hover:border-primary transition h-6 font-semibold text-xl md:text-base ">
-                Sun Infinity
-              </a>
-            </Link>
-            <Link href="/zayaa">
-              <a className="text-primary hover:border-b-2 hover:border-primary transition h-6 font-semibold text-xl md:text-base ">
-                Zayaa
-              </a>
-            </Link>
-            <Link href="/imperial-stores">
-              <a className="text-primary hover:border-b-2 hover:border-primary transition h-6 font-semibold text-xl md:text-base ">
-                Imperial Stores
-              </a>
-            </Link>
-            <Link href="/saibarrelco">
-              <a className="text-primary hover:border-b-2 hover:border-primary transition h-6 font-semibold text-xl md:text-base ">
-                Saibarrelco
-              </a>
-            </Link>
-            <Link href="/your-soul-tribe">
-              <a className="text-primary hover:border-b-2 hover:border-primary transition h-6 font-semibold text-xl md:text-base ">
-                Your Soul Tribe
-              </a>
-            </Link>
-            <Link href="/contact">
-              <a className="text-primary hover:border-b-2 hover:border-primary transition h-6 font-semibold text-xl md:text-base ">
-                Contact
-              </a>
-            </Link>
-          </div>
+      </div>
+      <div
+        className={`${
+          menuOpen ? 'scale-y-100' : 'scale-y-0'
+        } justify-between border-t-4 z-50 border-primary duration-300 origin-top transform-gpu bg-white w-full transition content-center items-center py-4`}
+      >
+        <div className="flex w-full justify-center flex-col md:flex-row items-center space-y-2 md:space-y-0 space-x-0 md:space-x-6 uppercase h-full md:h-12">
+          <Link href="/">
+            <a
+              onClick={onLinkClick}
+              className="hover:border-b-2 hover:border-primary transition pb-1 h-8 font-semibold text-xl md:text-base "
+            >
+              Home
+            </a>
+          </Link>
+          <Link href="/sun-infinity">
+            <a
+              onClick={onLinkClick}
+              className="hover:border-b-2 hover:border-primary transition pb-1 h-8 font-semibold text-xl md:text-base "
+            >
+              Sun Infinity
+            </a>
+          </Link>
+          <Link href="/zayaa">
+            <a
+              onClick={onLinkClick}
+              className="hover:border-b-2 hover:border-primary transition pb-1 h-8 font-semibold text-xl md:text-base "
+            >
+              Zayaa
+            </a>
+          </Link>
+          <Link href="/imperial-stores">
+            <a
+              onClick={onLinkClick}
+              className="hover:border-b-2 hover:border-primary transition pb-1 h-8 font-semibold text-xl md:text-base "
+            >
+              Imperial Stores
+            </a>
+          </Link>
+          <Link href="/saibarrelco">
+            <a
+              onClick={onLinkClick}
+              className="hover:border-b-2 hover:border-primary transition pb-1 h-8 font-semibold text-xl md:text-base "
+            >
+              Saibarrelco
+            </a>
+          </Link>
+          <Link href="/your-soul-tribe">
+            <a
+              onClick={onLinkClick}
+              className="hover:border-b-2 hover:border-primary transition pb-1 h-8 font-semibold text-xl md:text-base "
+            >
+              Your Soul Tribe
+            </a>
+          </Link>
+          <Link href="/contact">
+            <a
+              onClick={onLinkClick}
+              className="hover:border-b-2 hover:border-primary transition pb-1 h-8 font-semibold text-xl md:text-base "
+            >
+              Contact
+            </a>
+          </Link>
         </div>
       </div>
     </nav>

@@ -2,25 +2,11 @@ import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { motion } from 'framer-motion'
 import Head from 'next/head'
-import { useEffect, useState } from 'react'
 import PaddingLayout from '../components/PaddingLayout'
 import ContactSVG from '../public/blogging.svg'
 import { fadeIn } from '../utils/animation-variants'
 
 const Saibarrelco = () => {
-  const [sections, setSections] = useState(null)
-  const [isLoading, setLoading] = useState(false)
-
-  useEffect(() => {
-    setLoading(true)
-    fetch('api/saibarrelco')
-      .then((res) => res.json())
-      .then((data) => {
-        setSections(data.sections)
-        setLoading(false)
-      })
-  }, [])
-
   return (
     <motion.div exit={{ opacity: 0 }}>
       <Head>

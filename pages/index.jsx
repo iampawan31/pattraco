@@ -48,7 +48,7 @@ export default function Home() {
 
   return (
     <motion.div exit={{ opacity: 0 }} initial="initial" animate="animate">
-      <div className="px-2 md:px-0">
+      <div className="px-0">
         <main className="w-full h-full">
           <div className="h-full md:main-height-without-footer grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5">
             {data.map(({ id, href, mainTitle, imageSrc, subTitle }) => (
