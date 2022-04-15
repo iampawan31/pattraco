@@ -21,9 +21,17 @@ const Navbar = () => {
   }
 
   useEffect(() => {
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) {
+        setMenuOpen(false)
+      }
+      console.log(window.innerHeight, window.innerWidth)
+    })
+
     if (menuOpen) {
       setMenuOpen(false)
     }
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname])
 
@@ -32,7 +40,7 @@ const Navbar = () => {
       {/* Top Menu */}
       <div className="h-8 bg-primary flex items-center">
         <div className="container h-auto mx-auto px-4 md:px-0">
-          <div className="text-sm md:text-base space-x-2 flex justify-center md:justify-end items-center">
+          <div className="text-sm md:text-base font-normal space-x-2 flex justify-center md:justify-end items-center">
             <div>
               <a href="mailto:info@pattrco.com">
                 <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
@@ -42,7 +50,7 @@ const Navbar = () => {
             <div>
               <a href="tel:+919915381868">
                 <FontAwesomeIcon icon={faPhone} className="mr-2" />
-                +91-9915381868
+                <span>+91-9915381868</span>
               </a>
             </div>
           </div>
