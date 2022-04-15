@@ -2,15 +2,22 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Logo from '../public/logo.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons'
+import {
+  faEnvelope,
+  faPhone,
+  faBars,
+  faXmark,
+} from '@fortawesome/free-solid-svg-icons'
 
 const Navbar = () => {
+  const menuOpen = false
+
   return (
     <nav className="h-28 sticky w-full z-50 bg-white top-0 border-b shadow md:border-none md:shadow-none">
       {/* Top Menu */}
-      <div className="py-2 bg-primary text-primary-background">
+      <div className="py-2 bg-primary">
         <div className="container h-full mx-auto px-4 md:px-0">
-          <div className="text-sm md:text-base space-x-2 flex justify-end items-center">
+          <div className="text-sm md:text-base space-x-2 flex justify-center md:justify-end items-center">
             <div>
               <a href="mailto:info@pattrco.com">
                 <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
@@ -41,39 +48,48 @@ const Navbar = () => {
               </div>
             </Link>
           </div>
-          <div className=" w-9/12 flex justify-end flex-col md:flex-row items-center space-y-2 md:space-y-0 space-x-0 md:space-x-6 uppercase h-full md:h-12">
+          <div className="flex w-9/12 md:hidden justify-end items-center">
+            <button>
+              <FontAwesomeIcon
+                size="2x"
+                icon={menuOpen ? faXmark : faBars}
+                className=""
+              />
+            </button>
+          </div>
+          <div className="hidden w-9/12 md:flex justify-end flex-col md:flex-row items-center space-y-2 md:space-y-0 space-x-0 md:space-x-6 uppercase h-full md:h-12">
             <Link href="/">
-              <a className="text-primary hover:border-b-2 hover:border-primary transition h-6 font-semibold text-xl md:text-base ">
+              <a className="hover:border-b-2 hover:border-primary transition h-6 font-semibold text-xl md:text-base ">
                 Home
               </a>
             </Link>
             <Link href="/sun-infinity">
-              <a className="text-primary hover:border-b-2 hover:border-primary transition h-6 font-semibold text-xl md:text-base ">
+              <a className="hover:border-b-2 hover:border-primary transition h-6 font-semibold text-xl md:text-base ">
                 Sun Infinity
               </a>
             </Link>
             <Link href="/zayaa">
-              <a className="text-primary hover:border-b-2 hover:border-primary transition h-6 font-semibold text-xl md:text-base ">
+              <a className="hover:border-b-2 hover:border-primary transition h-6 font-semibold text-xl md:text-base ">
                 Zayaa
               </a>
             </Link>
             <Link href="/imperial-stores">
-              <a className="text-primary hover:border-b-2 hover:border-primary transition h-6 font-semibold text-xl md:text-base ">
+              <a className="hover:border-b-2 hover:border-primary transition h-6 font-semibold text-xl md:text-base ">
                 Imperial Stores
               </a>
             </Link>
             <Link href="/saibarrelco">
-              <a className="text-primary hover:border-b-2 hover:border-primary transition h-6 font-semibold text-xl md:text-base ">
+              <a className="hover:border-b-2 hover:border-primary transition h-6 font-semibold text-xl md:text-base ">
                 Saibarrelco
               </a>
             </Link>
             <Link href="/your-soul-tribe">
-              <a className="text-primary hover:border-b-2 hover:border-primary transition h-6 font-semibold text-xl md:text-base ">
+              <a className="hover:border-b-2 hover:border-primary transition h-6 font-semibold text-xl md:text-base ">
                 Your Soul Tribe
               </a>
             </Link>
             <Link href="/contact">
-              <a className="text-primary hover:border-b-2 hover:border-primary transition h-6 font-semibold text-xl md:text-base ">
+              <a className="hover:border-b-2 hover:border-primary transition h-6 font-semibold text-xl md:text-base ">
                 Contact
               </a>
             </Link>
@@ -82,7 +98,7 @@ const Navbar = () => {
         <div className="hidden h-auto justify-between content-center items-center">
           <div className="flex w-full justify-center flex-col md:flex-row items-center space-y-2 md:space-y-0 space-x-0 md:space-x-6 uppercase h-full md:h-12">
             <Link href="/">
-              <a className="text-primary hover:border-b-2 hover:border-primary transition h-6 font-semibold text-xl md:text-base ">
+              <a className="hover:border-b-2 hover:border-primary transition h-6 font-semibold text-xl md:text-base ">
                 Home
               </a>
             </Link>
