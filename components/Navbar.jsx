@@ -76,37 +76,37 @@ const Navbar = () => {
           {/* Main Navigation */}
           <div className="hidden w-9/12 md:flex justify-end flex-col md:flex-row items-center space-y-2 md:space-y-0 space-x-0 md:space-x-6 uppercase h-full md:h-12">
             <Link href="/">
-              <a className="hover:border-b-2 hover:border-primary transition h-6 font-semibold text-xl md:text-base ">
+              <a className="hover:border-b-2 hover:border-primary transition h-6 font-light text-xl md:text-base ">
                 Home
               </a>
             </Link>
             <Link href="/sun-infinity">
-              <a className="hover:border-b-2 hover:border-primary transition h-6 font-semibold text-xl md:text-base ">
+              <a className="hover:border-b-2 hover:border-primary transition h-6 font-light text-xl md:text-base ">
                 Sun Infinity
               </a>
             </Link>
             <Link href="/zayaa">
-              <a className="hover:border-b-2 hover:border-primary transition h-6 font-semibold text-xl md:text-base ">
+              <a className="hover:border-b-2 hover:border-primary transition h-6 font-light text-xl md:text-base ">
                 Zayaa
               </a>
             </Link>
             <Link href="/imperial-stores">
-              <a className="hover:border-b-2 hover:border-primary transition h-6 font-semibold text-xl md:text-base ">
+              <a className="hover:border-b-2 hover:border-primary transition h-6 font-light text-xl md:text-base ">
                 Imperial Stores
               </a>
             </Link>
             <Link href="/saibarrelco">
-              <a className="hover:border-b-2 hover:border-primary transition h-6 font-semibold text-xl md:text-base ">
+              <a className="hover:border-b-2 hover:border-primary transition h-6 font-light text-xl md:text-base ">
                 Saibarrelco
               </a>
             </Link>
             <Link href="/your-soul-tribe">
-              <a className="hover:border-b-2 hover:border-primary transition h-6 font-semibold text-xl md:text-base ">
+              <a className="hover:border-b-2 hover:border-primary transition h-6 font-light text-xl md:text-base ">
                 Your Soul Tribe
               </a>
             </Link>
             <Link href="/contact">
-              <a className="hover:border-b-2 hover:border-primary transition h-6 font-semibold text-xl md:text-base ">
+              <a className="hover:border-b-2 hover:border-primary transition h-6 font-light text-xl md:text-base ">
                 Contact
               </a>
             </Link>
@@ -122,7 +122,7 @@ const Navbar = () => {
           <Link href="/">
             <a
               onClick={onLinkClick}
-              className="hover:border-b-2 hover:border-primary transition pb-1 h-8 font-semibold text-xl md:text-base "
+              className="hover:border-b-2 hover:border-primary transition pb-1 h-8 font-light text-2xl md:text-base "
             >
               Home
             </a>
@@ -130,7 +130,7 @@ const Navbar = () => {
           <Link href="/sun-infinity">
             <a
               onClick={onLinkClick}
-              className="hover:border-b-2 hover:border-primary transition pb-1 h-8 font-semibold text-xl md:text-base "
+              className="hover:border-b-2 hover:border-primary transition pb-1 h-8 font-light text-2xl md:text-base "
             >
               Sun Infinity
             </a>
@@ -138,7 +138,7 @@ const Navbar = () => {
           <Link href="/zayaa">
             <a
               onClick={onLinkClick}
-              className="hover:border-b-2 hover:border-primary transition pb-1 h-8 font-semibold text-xl md:text-base "
+              className="hover:border-b-2 hover:border-primary transition pb-1 h-8 font-light text-2xl md:text-base "
             >
               Zayaa
             </a>
@@ -146,7 +146,7 @@ const Navbar = () => {
           <Link href="/imperial-stores">
             <a
               onClick={onLinkClick}
-              className="hover:border-b-2 hover:border-primary transition pb-1 h-8 font-semibold text-xl md:text-base "
+              className="hover:border-b-2 hover:border-primary transition pb-1 h-8 font-light text-2xl md:text-base "
             >
               Imperial Stores
             </a>
@@ -154,7 +154,7 @@ const Navbar = () => {
           <Link href="/saibarrelco">
             <a
               onClick={onLinkClick}
-              className="hover:border-b-2 hover:border-primary transition pb-1 h-8 font-semibold text-xl md:text-base "
+              className="hover:border-b-2 hover:border-primary transition pb-1 h-8 font-light text-2xl md:text-base "
             >
               Saibarrelco
             </a>
@@ -162,7 +162,7 @@ const Navbar = () => {
           <Link href="/your-soul-tribe">
             <a
               onClick={onLinkClick}
-              className="hover:border-b-2 hover:border-primary transition pb-1 h-8 font-semibold text-xl md:text-base "
+              className="hover:border-b-2 hover:border-primary transition pb-1 h-8 font-light text-2xl md:text-base "
             >
               Your Soul Tribe
             </a>
@@ -170,7 +170,7 @@ const Navbar = () => {
           <Link href="/contact">
             <a
               onClick={onLinkClick}
-              className="hover:border-b-2 hover:border-primary transition pb-1 h-8 font-semibold text-xl md:text-base "
+              className="hover:border-b-2 hover:border-primary transition pb-1 h-8 font-light text-2xl md:text-base "
             >
               Contact
             </a>
