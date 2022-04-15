@@ -53,7 +53,7 @@ const Zayaa = () => {
         <HeroSection
           imageSrc={miningBg}
           mainTitle="Zayaa"
-          subTitle="Earth Mined"
+          subTitle="Earth Mined Gemstones & Jewelry"
         />
         <div className="py-6 md:py-10 bg-white">
           <motion.div
