@@ -26,7 +26,7 @@ module.exports = {
         'primary-dark': '#505A1B',
         'primary-background': '#f2f5f7',
         'primary-font': '#5d7079',
-        'secondary-font': '#37517e',
+        'secondary-font': '#050505',
       },
       fontFamily: {
         primary: ['Montserrat'],

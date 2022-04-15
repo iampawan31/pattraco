@@ -5,6 +5,14 @@ const Footer = () => {
   return (
     <div className="w-full h-full md:h-28 space-y-6 md:space-y-1 flex flex-col justify-center items-center uppercase py-10">
       <div className="flex w-full justify-center flex-col md:flex-row items-center space-y-2 md:space-y-0 space-x-0 md:space-x-2 h-full md:h-12">
+        <Link href="/">
+          <a className="text-primary-dark hover:border-b-2 hover:border-primary-dark transition h-6 font-semibold text-xl md:text-base ">
+            Home
+          </a>
+        </Link>
+        <div className="text-primary-dark hidden md:block font-semibold text-xl">
+          •
+        </div>
         <Link href="/sun-infinity">
           <a className="text-primary-dark hover:border-b-2 hover:border-primary-dark transition h-6 font-semibold text-xl md:text-base ">
             Sun Infinity

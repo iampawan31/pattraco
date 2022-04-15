@@ -6,9 +6,9 @@ import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons'
 
 const Navbar = () => {
   return (
-    <nav className="h-16 sticky w-full z-50 bg-white top-0 border-b shadow md:border-none md:shadow-none">
+    <nav className="h-32 sticky w-full z-50 bg-white py-4 top-0 border-b shadow md:border-none md:shadow-none">
       <div className="container h-full mx-auto px-4 md:px-0">
-        <div className="flex h-full justify-between content-center items-center">
+        <div className="flex h-auto justify-between content-center items-center">
           <div className="hidden md:block w-1/4"></div>
           <div className="w-1/2 md:w-1/4 flex justify-start md:justify-center">
             <Link href="/" passHref>
@@ -22,7 +22,7 @@ const Navbar = () => {
               </div>
             </Link>
           </div>
-          <div className="w-1/2 md:w-1/4 text-sm md:text-base flex justify-end items-center">
+          <div className="w-1/2 hidden md:flex md:w-1/4 text-sm md:text-base justify-end items-center">
             <div className="flex flex-col">
               <div>
                 <a href="mailto:info@pattrco.com">
@@ -37,6 +37,45 @@ const Navbar = () => {
                 </a>
               </div>
             </div>
+          </div>
+        </div>
+        <div className="flex h-auto justify-between content-center items-center">
+          <div className="flex w-full justify-center flex-col md:flex-row items-center space-y-2 md:space-y-0 space-x-0 md:space-x-6 uppercase h-full md:h-12">
+            <Link href="/">
+              <a className="text-primary hover:border-b-2 hover:border-primary transition h-6 font-semibold text-xl md:text-base ">
+                Home
+              </a>
+            </Link>
+            <Link href="/sun-infinity">
+              <a className="text-primary hover:border-b-2 hover:border-primary transition h-6 font-semibold text-xl md:text-base ">
+                Sun Infinity
+              </a>
+            </Link>
+            <Link href="/zayaa">
+              <a className="text-primary hover:border-b-2 hover:border-primary transition h-6 font-semibold text-xl md:text-base ">
+                Zayaa
+              </a>
+            </Link>
+            <Link href="/imperial-stores">
+              <a className="text-primary hover:border-b-2 hover:border-primary transition h-6 font-semibold text-xl md:text-base ">
+                Imperial Stores
+              </a>
+            </Link>
+            <Link href="/saibarrelco">
+              <a className="text-primary hover:border-b-2 hover:border-primary transition h-6 font-semibold text-xl md:text-base ">
+                Saibarrelco
+              </a>
+            </Link>
+            <Link href="/your-soul-tribe">
+              <a className="text-primary hover:border-b-2 hover:border-primary transition h-6 font-semibold text-xl md:text-base ">
+                Your Soul Tribe
+              </a>
+            </Link>
+            <Link href="/contact">
+              <a className="text-primary hover:border-b-2 hover:border-primary transition h-6 font-semibold text-xl md:text-base ">
+                Contact
+              </a>
+            </Link>
           </div>
         </div>
       </div>

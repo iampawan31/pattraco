@@ -21,7 +21,7 @@ export default function Home() {
       href: '/zayaa',
       imageSrc: miningBg,
       mainTitle: 'Zayaa',
-      subTitle: 'Earth-Mined',
+      subTitle: 'Earth Mined Gemstones & Jewelry',
     },
     {
       id: 3,
