@@ -39,14 +39,14 @@ const YourSoulTribe = () => {
           mainTitle="Your Soul Tribe"
           subTitle="CSR"
         />
-        <div className="py-6 md:py-10 bg-white">
+        <div className="py-6 lg:py-10 bg-primary text-primary-background">
           <motion.div
             initial="hidden"
             viewport={{ once: true }}
             whileInView="visible"
             variants={fadeIn}
           >
-            <div className="container mx-auto bg-white text-xl md:text-4xl md:text-center font-medium px-2 md:px-0">
+            <div className="container mx-auto text-xl lg:text-4xl lg:text-center font-medium px-2 lg:px-2 xl:px-0">
               Giving back to the society is what we strive for.
             </div>
           </motion.div>

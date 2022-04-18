@@ -39,14 +39,14 @@ const ImperialStores = () => {
           mainTitle="Imperial Stores"
           subTitle="FMCG Retail"
         />
-        <div className="py-6 md:py-10 bg-white flex justify-center flex-col">
+        <div className="py-6 lg:py-10 bg-primary text-primary-background flex justify-center flex-col">
           <motion.div
             initial="hidden"
             viewport={{ once: true }}
             whileInView="visible"
             variants={fadeIn}
           >
-            <div className="container mx-auto bg-white text-xl md:text-4xl font-medium md:text-center px-2 md:px-0">
+            <div className="container mx-auto text-xl lg:text-4xl font-medium lg:text-center px-2 lg:px-2 xl:px-0">
               The buzzing new era of DIY - hygiene-conscious food, we bring
               Imperial Stores to multiple cities of India.
             </div>
@@ -57,7 +57,7 @@ const ImperialStores = () => {
             whileInView="visible"
             variants={fadeIn}
           >
-            <div className="max-w-3xl flex justify-center mx-auto self-center text-base md:text-lg md:text-center mt-4 px-2 md:px-0">
+            <div className="max-w-3xl flex justify-center mx-auto self-center text-base lg:text-lg lg:text-center mt-4 px-2 lg:px-2 xl:px-0">
               With our growing presence in Chandigarh, Gurgaon, New Delhi,
               Patiala, Amritsar, Jaipur, and many more cities, we create the
               most efficient, organized and hygienic shopping experiences for
