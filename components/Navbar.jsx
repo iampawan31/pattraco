@@ -73,7 +73,7 @@ const Navbar = () => {
           </div>
           {/* Mobile Menu Open Button */}
           <div className="flex w-9/12 lg:hidden justify-end items-center">
-            <button onClick={onLinkClick}>
+            <button onClick={onLinkClick} aria-label="Menu Button">
               <FontAwesomeIcon
                 size="2x"
                 icon={menuOpen ? faXmark : faBars}
