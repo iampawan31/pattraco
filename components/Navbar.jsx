@@ -35,10 +35,10 @@ const Navbar = () => {
   }, [pathname])
 
   return (
-    <nav className="h-24 sticky w-full z-50 bg-white top-0 border-b shadow lg:border-none lg:shadow-none">
+    <nav className="h-28 sticky w-full z-50 bg-white top-0 border-b shadow lg:border-none lg:shadow-none">
       {/* Top Menu */}
       <div className="h-8 bg-primary flex items-center">
-        <div className="container h-auto mx-auto px-4 lg:px-2 xl:px-0">
+        <div className="container h-auto mx-auto px-4 lg:px-8 xl:px-12">
           <div className="text-sm lg:text-base font-normal space-x-2 flex justify-center lg:justify-end items-center">
             <div>
               <a href="mailto:info@pattrco.com">
@@ -56,11 +56,11 @@ const Navbar = () => {
         </div>
       </div>
       {/* Main Menu */}
-      <div className="container h-16 mx-auto px-4 lg:px-2 xl:px-0">
+      <div className="container h-20 mx-auto px-4 lg:px-8 xl:px-12">
         <div className="flex h-full justify-between items-center">
           <div className="w-2/12 xl:w-3/12">
             <Link href="/" passHref>
-              <div className="relative h-12 w-24 lg:h-12 lg:w-24 cursor-pointer">
+              <div className="relative h-12 w-24 lg:h-16 lg:w-32 cursor-pointer">
                 <Image
                   src={Logo}
                   layout="fill"

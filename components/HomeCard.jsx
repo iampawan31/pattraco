@@ -19,8 +19,10 @@ const HomeCard = forwardRef(
               placeholder="blur"
             />
             <div
-              className="w-full h-full py-2 lg:py-6 text-left
-        content-end cursor-pointer absolute top-0 left-0 flex
+              className="w-full h-auto py-2 lg:pb-6 lg:pt-10 text-left
+        content-end cursor-pointer absolute bottom-0 bg-gradient-to-t from-black/100 to-transparent
+        group-hover:from-black/90 transition duration-300
+        group-hover:to-transparent left-0 flex
         flex-col justify-end text-gray-100 z-30 font-extralight px-2"
             >
               <div className="text-3xl ">{mainTitle}</div>
