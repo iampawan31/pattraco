@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 
 // eslint-disable-next-line react/display-name
 const HomeCard = forwardRef(
-  ({ href, imageSrc, mainTitle, subTitle, fadeInUp }, ref) => {
+  ({ href, imageSrc, mainTitle, subTitle, fadeInUp, position }, ref) => {
     return (
       <motion.div variants={fadeInUp}>
         <a href={href} className="group" ref={ref}>
@@ -13,16 +13,15 @@ const HomeCard = forwardRef(
               src={imageSrc}
               layout="fill"
               objectFit="cover"
+              objectPosition={position}
               className="group-hover:scale-110 ease-in-out transform transition duration-500"
               alt={mainTitle}
               placeholder="blur"
             />
             <div
-              className="bg-gradient-to-t from-black/90 to-black/10
-        group-hover:from-black/90 transition duration-300
-        group-hover:to-black/30 w-full h-full py-2 lg:py-6 text-left
+              className="w-full h-full py-2 lg:py-6 text-left
         content-end cursor-pointer absolute top-0 left-0 flex
-        flex-col justify-end text-gray-300 z-30 font-extralight px-2"
+        flex-col justify-end text-gray-100 z-30 font-extralight px-2"
             >
               <div className="text-3xl ">{mainTitle}</div>
               <div>{subTitle}</div>

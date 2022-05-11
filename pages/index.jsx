@@ -14,7 +14,8 @@ export default function Home() {
       href: '/sun-infinity',
       imageSrc: solarBg,
       mainTitle: 'Sun Infinity',
-      subTitle: 'Solar',
+      subTitle: 'Solar Power',
+      position: '50% 50%',
     },
     {
       id: 2,
@@ -22,6 +23,7 @@ export default function Home() {
       imageSrc: miningBg,
       mainTitle: 'Zayaa',
       subTitle: 'Earth Mined Gemstones & Jewelry',
+      position: '50% 50%',
     },
     {
       id: 3,
@@ -29,6 +31,7 @@ export default function Home() {
       imageSrc: fmcgBg,
       mainTitle: 'Imperial Stores',
       subTitle: 'FMCG Retail',
+      position: '50% 50%',
     },
     {
       id: 4,
@@ -36,6 +39,7 @@ export default function Home() {
       imageSrc: agroBg,
       mainTitle: 'Saibarrelco',
       subTitle: 'Agro Technology',
+      position: '50% 50%',
     },
     {
       id: 5,
@@ -43,6 +47,7 @@ export default function Home() {
       imageSrc: csrBg,
       mainTitle: 'Your Soul Tribe',
       subTitle: 'CSR',
+      position: '70% 50%',
     },
   ]
 
@@ -51,21 +56,24 @@ export default function Home() {
       <div className="px-0">
         <main className="w-full h-full">
           <div className="h-full lg:main-height-without-footer grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5">
-            {data.map(({ id, href, mainTitle, imageSrc, subTitle }) => (
-              <Link
-                key={id}
-                href={href}
-                as={href}
-                passHref
-                className="cursor-pointer"
-              >
-                <HomeCard
-                  imageSrc={imageSrc}
-                  mainTitle={mainTitle}
-                  subTitle={subTitle}
-                />
-              </Link>
-            ))}
+            {data.map(
+              ({ id, href, mainTitle, imageSrc, subTitle, position }) => (
+                <Link
+                  key={id}
+                  href={href}
+                  as={href}
+                  passHref
+                  className="cursor-pointer"
+                >
+                  <HomeCard
+                    imageSrc={imageSrc}
+                    mainTitle={mainTitle}
+                    subTitle={subTitle}
+                    position={position}
+                  />
+                </Link>
+              )
+            )}
           </div>
         </main>
       </div>

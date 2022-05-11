@@ -20,7 +20,7 @@ const Saibarrelco = () => {
             <ContactSVG />
           </div>
 
-          <div className="w-full lg:w-1/2 bg-white shadow rounded p-6 mx-auto">
+          <div className="w-full lg:w-1/2 bg-white shadow rounded-2xl p-6 mx-auto">
             <motion.div initial="hidden" animate="visible" variants={fadeIn}>
               <div className="text-4xl pb-1 mb-2 font-semibold">Contact Us</div>
               <div className="flex flex-col lg:flex-row lg:space-x-6 mb-6">

@@ -3,13 +3,13 @@ import { motion } from 'framer-motion'
 
 const ContentSectionCard = ({ mainTitle, content, imageSrc }) => {
   return (
-    <div className="w-full h-full bg-white rounded-lg shadow">
+    <div className="w-full h-full bg-white rounded-2xl shadow overflow-clip">
       <div className="flex flex-col lg:flex-row space-y-4 lg:space-x-4">
         <div className="relative min-h-full h-72 lg:h-128 w-full">
           <Image
             src={imageSrc}
             layout="fill"
-            className="rounded-t-lg lg:rounded-tr-none lg:rounded-l-lg"
+            className="rounded-t-2xl lg:rounded-tr-none lg:rounded-l-2xl"
             objectFit="cover"
             placeholder="blur"
             alt={mainTitle}

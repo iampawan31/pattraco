@@ -25,7 +25,6 @@ const Navbar = () => {
       if (window.innerWidth > 768) {
         setMenuOpen(false)
       }
-      console.log(window.innerHeight, window.innerWidth)
     })
 
     if (menuOpen) {

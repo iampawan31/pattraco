@@ -14,7 +14,7 @@ const sections = [
     imageSrc: agroImageTwo,
     mainTitle: 'Plantations',
     content:
-      "At SAIBARRELCO we have north-India's more scientific eco-farming concepts in conserving one of the world’s oldest plant species, by foraying into the potential of US$3.6Billion in the Indian Agro-Forestry commercial. We are regenerating one of the most demanded & endangered forest species, and have also established plantations as an AgroForestry concept.",
+      "At SAIBARRELCO we have north-India's more scientific eco-farming concepts in conserving one of the world’s oldest plant species, by foraying into the potential of US$ 3.6 Billion in the Indian Agro-Forestry commercial. We are regenerating one of the most demanded & endangered forest species, and have also established plantations as an AgroForestry concept.",
   },
   {
     id: 2,
