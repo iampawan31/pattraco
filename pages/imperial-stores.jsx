@@ -47,8 +47,8 @@ const ImperialStores = () => {
             variants={fadeIn}
           >
             <div className="container mx-auto text-xl lg:text-4xl font-medium lg:text-center px-2 lg:px-2 xl:px-0">
-              The buzzing new era of DIY - hygiene-conscious food, we bring
-              Imperial Stores to multiple cities of India.
+              The buzzing new era of DIY - hygiene-conscious food, <br /> we
+              bring Imperial Stores to multiple cities of India.
             </div>
           </motion.div>
           <motion.div
@@ -59,9 +59,8 @@ const ImperialStores = () => {
           >
             <div className="max-w-3xl flex justify-center mx-auto self-center text-base lg:text-lg lg:text-center mt-4 px-2 lg:px-2 xl:px-0">
               With our growing presence in Chandigarh, Gurgaon, New Delhi,
-              Patiala, Amritsar, Jaipur, and many more cities, we create the
-              most efficient, organized and hygienic shopping experiences for
-              our customers.
+              Patiala, Amritsar, Jaipur in India, we create the most efficient,
+              organized and hygienic shopping experiences for our customers.
             </div>
           </motion.div>
         </div>

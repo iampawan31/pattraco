@@ -3,7 +3,7 @@ import Link from 'next/link'
 const Footer = () => {
   const currentYear = new Date().getFullYear()
   return (
-    <div className="w-full h-full lg:h-16 space-y-6 lg:space-y-1 flex flex-col justify-center items-center uppercase py-10">
+    <div className="w-full h-full lg:h-16 space-y-6 bg-primary lg:space-y-1 flex flex-col justify-center items-center uppercase py-10">
       {/* <div className="flex w-full justify-center flex-col lg:flex-row items-center space-y-2 lg:space-y-0 space-x-0 lg:space-x-2 h-full lg:h-12">
         <Link href="/">
           <a className="hover:border-b-2 hover:border-primary transition h-6 font-semibold text-xl lg:text-base ">

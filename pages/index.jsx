@@ -35,9 +35,9 @@ export default function Home() {
     },
     {
       id: 4,
-      href: '/saibarrelco',
+      href: '/barrelton',
       imageSrc: agroBg,
-      mainTitle: 'Saibarrelco',
+      mainTitle: 'Barrelton',
       subTitle: 'Agro Technology',
       position: '50% 50%',
     },

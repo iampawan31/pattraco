@@ -41,7 +41,7 @@ const Navbar = () => {
         <div className="container h-auto mx-auto px-4 lg:px-8 xl:px-12">
           <div className="text-sm lg:text-base font-normal space-x-2 flex justify-center lg:justify-end items-center">
             <div>
-              <a href="mailto:info@pattrco.com">
+              <a href="mailto:info@pattraco.com">
                 <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
                 <span>info@pattraco.com</span>
               </a>
@@ -102,9 +102,9 @@ const Navbar = () => {
                 Imperial Stores
               </a>
             </Link>
-            <Link href="/saibarrelco">
+            <Link href="/barrelton">
               <a className="hover:border-b-4 hover:border-primary transition h-8 font-light text-xl lg:text-base pb-2">
-                Saibarrelco
+                Barrelton
               </a>
             </Link>
             <Link href="/your-soul-tribe">
@@ -158,12 +158,12 @@ const Navbar = () => {
               Imperial Stores
             </a>
           </Link>
-          <Link href="/saibarrelco">
+          <Link href="/barrelton">
             <a
               onClick={onLinkClick}
               className="hover:border-b-2 hover:border-primary transition pb-1 h-8 font-light text-2xl lg:text-base "
             >
-              Saibarrelco
+              Barrelton
             </a>
           </Link>
           <Link href="/your-soul-tribe">
