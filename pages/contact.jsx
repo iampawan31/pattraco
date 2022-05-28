@@ -30,7 +30,7 @@ const Contact = () => {
     if (response.status === 200) {
       setLoading(false)
       setSuccess(true)
-      setStatus("Thank you for contacting. I'll get in touch with you soon!")
+      setStatus("Thank you for contacting. We'll get in touch with you soon!")
       if (formEl && formEl.current) {
         formEl.current.reset()
       }
