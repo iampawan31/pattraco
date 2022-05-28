@@ -5,8 +5,42 @@ import Head from 'next/head'
 import PaddingLayout from '../components/PaddingLayout'
 import ContactSVG from '../public/blogging.svg'
 import { fadeIn } from '../utils/animation-variants'
+import { useState, useRef } from 'react'
 
-const Saibarrelco = () => {
+const Contact = () => {
+  const formEl = useRef(null)
+  const [loading, setLoading] = useState(false)
+  const [success, setSuccess] = useState(false)
+  const [status, setStatus] = useState('')
+  const CAPTCHA_KEY = '6Lf5uCYgAAAAAG2AvNTqEpmIEmpF8ohpyC8T8WR9'
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+
+    setLoading(true)
+    const data = new FormData(e.currentTarget)
+    const response = await fetch(e.currentTarget.action, {
+      method: 'POST',
+      body: data,
+      headers: {
+        Accept: 'application/json',
+      },
+    })
+
+    if (response.status === 200) {
+      setLoading(false)
+      setSuccess(true)
+      setStatus("Thank you for contacting. I'll get in touch with you soon!")
+      if (formEl && formEl.current) {
+        formEl.current.reset()
+      }
+    } else {
+      setLoading(false)
+      setSuccess(false)
+      setStatus('Oops! There was a problem submitting your form')
+    }
+  }
+
   return (
     <motion.div exit={{ opacity: 0 }}>
       <Head>
@@ -37,52 +71,75 @@ const Saibarrelco = () => {
                   </a>
                 </div>
               </div>
-              <div className="flex flex-col mb-2">
-                <label htmlFor="name">Full Name</label>
-                <input
-                  type="text"
-                  name="name"
-                  className="border border-primary px-2 py-4 bg-white rounded w-full "
-                  id="name"
-                  placeholder="John Doe"
-                />
-              </div>
-              <div className="flex flex-col mb-2">
-                <label htmlFor="email">Email</label>
-                <input
-                  type="email"
-                  name="email"
-                  className="border border-primary px-2 py-4 bg-white rounded w-full "
-                  id="email"
-                  placeholder="johndoe@gmail.com"
-                />
-              </div>
-              <div className="flex flex-col mb-2">
-                <label htmlFor="phone">Phone</label>
-                <input
-                  type="text"
-                  name="phone"
-                  className="border border-primary px-2 py-4 bg-white rounded w-full "
-                  id="phone"
-                  placeholder="+91-XXXXXXXXXX"
-                />
-              </div>
-              <div className="flex flex-col mb-4">
-                <label htmlFor="message" className="text-sm">
-                  Message
-                </label>
-                <textarea
-                  name="message"
-                  className="border border-primary px-2 py-4 bg-white rounded w-full "
-                  id="phone"
-                  placeholder="Your message here..."
-                />
-              </div>
-              <div>
-                <button className="text-white bg-primary text-xl font-normal uppercase w-full  px-2 py-4 rounded hover:bg-black/70 transition">
-                  Send Message
-                </button>
-              </div>
+              <form
+                ref={formEl}
+                onSubmit={handleSubmit}
+                id="contact-form"
+                action="https://formspree.io/f/xgeddljg"
+                method="POST"
+              >
+                <div className="flex flex-col mb-2">
+                  <label htmlFor="name">Full Name</label>
+                  <input
+                    type="text"
+                    name="name"
+                    className="border border-primary px-2 py-4 bg-white rounded w-full "
+                    id="name"
+                    placeholder="John Doe"
+                  />
+                </div>
+                <div className="flex flex-col mb-2">
+                  <label htmlFor="email">Email</label>
+                  <input
+                    type="email"
+                    name="email"
+                    className="border border-primary px-2 py-4 bg-white rounded w-full "
+                    id="email"
+                    placeholder="johndoe@gmail.com"
+                  />
+                </div>
+                <div className="flex flex-col mb-2">
+                  <label htmlFor="phone">Phone</label>
+                  <input
+                    type="text"
+                    name="phone"
+                    className="border border-primary px-2 py-4 bg-white rounded w-full "
+                    id="phone"
+                    placeholder="+91-XXXXXXXXXX"
+                  />
+                </div>
+                <div className="flex flex-col mb-4">
+                  <label htmlFor="message" className="text-sm">
+                    Message
+                  </label>
+                  <textarea
+                    name="message"
+                    className="border border-primary px-2 py-4 bg-white rounded w-full "
+                    id="phone"
+                    placeholder="Your message here..."
+                  />
+                </div>
+                <div className="form-control flex flex-col py-4">
+                  <div className="g-recaptcha" data-sitekey={CAPTCHA_KEY}></div>
+                </div>
+                <div>
+                  <button
+                    disabled={loading}
+                    className="text-white bg-primary text-xl font-normal uppercase w-full  px-2 py-4 rounded hover:bg-black/70 transition disabled:opacity-50"
+                  >
+                    {loading ? 'Submitting...' : 'Submit'}
+                  </button>
+                </div>
+                {status ? (
+                  <div
+                    className={`${
+                      success ? 'bg-green' : 'bg-red'
+                    } w-full my-4 rounded py-2 px-2 text-white`}
+                  >
+                    {status}
+                  </div>
+                ) : null}
+              </form>
             </motion.div>
           </div>
         </div>
@@ -92,4 +149,4 @@ const Saibarrelco = () => {
   )
 }
 
-export default Saibarrelco
+export default Contact
