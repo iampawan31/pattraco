@@ -1,15 +1,10 @@
-import Image from 'next/image'
-import { useRouter } from 'next/router'
-import Link from 'next/link'
-import Logo from '../public/logo.png'
-import { useState, useEffect } from 'react'
+import { faBars, faPhone, faXmark } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  faEnvelope,
-  faPhone,
-  faBars,
-  faXmark,
-} from '@fortawesome/free-solid-svg-icons'
+import Image from 'next/image'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import { useEffect, useState } from 'react'
+import Logo from '../public/logo.png'
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -40,15 +35,18 @@ const Navbar = () => {
       <div className="h-8 bg-primary flex items-center">
         <div className="container h-auto mx-auto px-4 lg:px-8 xl:px-12">
           <div className="text-sm lg:text-base font-normal space-x-2 flex justify-center lg:justify-end items-center">
-            <div>
+            {/* <div>
               <a href="mailto:info@pattraco.com">
                 <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
                 <span>info@pattraco.com</span>
               </a>
-            </div>
+            </div> */}
             <div>
               <a href="tel:+919915381868">
-                <FontAwesomeIcon icon={faPhone} className="mr-2" />
+                <FontAwesomeIcon
+                  icon={faPhone}
+                  className="mr-2"
+                />
                 <span>+91-9915381868</span>
               </a>
             </div>
@@ -59,7 +57,10 @@ const Navbar = () => {
       <div className="container h-20 mx-auto px-4 lg:px-8 xl:px-12">
         <div className="flex h-full justify-between items-center">
           <div className="w-2/12 xl:w-3/12">
-            <Link href="/" passHref>
+            <Link
+              href="/"
+              passHref
+            >
               <div className="relative h-12 w-24 lg:h-16 lg:w-32 cursor-pointer">
                 <Image
                   src={Logo}
@@ -72,7 +73,10 @@ const Navbar = () => {
           </div>
           {/* Mobile Menu Open Button */}
           <div className="flex w-9/12 lg:hidden justify-end items-center">
-            <button onClick={onLinkClick} aria-label="Menu Button">
+            <button
+              onClick={onLinkClick}
+              aria-label="Menu Button"
+            >
               <FontAwesomeIcon
                 size="2x"
                 icon={menuOpen ? faXmark : faBars}
